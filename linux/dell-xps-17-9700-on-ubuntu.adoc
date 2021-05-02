@@ -21,7 +21,6 @@ I followed the guide here (https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel) fo
     sudo apt-get build-dep linux linux-image-$(uname -r)
     sudo apt-get install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf
 
-
 2) Get the sources
 
 Change to a directory where you want to have the sources checked out and run:
@@ -34,6 +33,16 @@ Edit the following file `debian.master/config/amd64/config.common.amd64` by addi
 
     CONFIG_SND_SOC_INTEL_SOUNDWIRE_SOF_MACH=m
     CONFIG_SND_SOC_INTEL_USER_FRIENDLY_LONG_NAMES=y
+
+Also edit `debian.master/config/annotations`:
+
+Change:
+
+    CONFIG_SND_SOC_INTEL_USER_FRIENDLY_LONG_NAMES   policy<{'amd64': 'n'}>
+
+To:
+
+    CONFIG_SND_SOC_INTEL_USER_FRIENDLY_LONG_NAMES   policy<{'amd64': 'y'}>
 
 4) Give the Kernel a new name
 
@@ -48,7 +57,22 @@ Append something to the version (I changed it to):
 
     linux (5.11.0-16.16+audio) hiruste; urgency=medium
 
-TODO: Contiune here ...
+5) Make some scripts executable:
+
+    chmod a+x debian/rules
+    chmod a+x debian/scripts/*
+    chmod a+x debian/scripts/misc/*
+
+6) Update the config:
+
+    LANG=C fakeroot debian/rules clean
+    LANG=C fakeroot debian/rules editconfigs
+
+For each config, just hit `Save` and then `Exit`.
+
+NOTE: Go through all variants with `Y`, or you'll get errors (In my case that was for `generic` and for `lowlatency`)
+
+TODO: Continue here ...
 
 #### Bluetooth
 
