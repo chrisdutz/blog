@@ -101,7 +101,6 @@ NOTE: For some reason `dpkg` didn't want to let me install `linux-image-unsigned
 
 Reboot your system to make it use the new kernel.
 
-
 #### Bluetooth Problems
 
 Every now and then, none of my `Bluetooth` devices work.
@@ -134,3 +133,16 @@ In all the other cases, all I needed to do was run:
 
     sudo systemctl restart bluetooth
 
+#### Enable the fingerprint scanner
+
+Go to `http://dell.archive.canonical.com/updates/pool/public/libf/libfprint-2-tod1-goodix/` and download the file `libfprint-2-tod1-goodix_0.0.4-0ubuntu1somerville1_amd64.deb`.
+
+NOTE: At the time of me writing this, there was also a `0.0.6` version, so I thought, I'd install that instead ... DON'T ... it doesn't work. Just download the version `0.0.4`
+
+After that's done, simply execute the following command (as the user you want to login with the fingerprint scanner):
+
+    fprintd-enrol
+
+A popup will ask you to authenticate. So that and then simply put your finger on the sensor (ideally in different positions). I needed to do that about 10 times and then it was done.
+
+Now I'm able to login with my fingerprint scanner.
