@@ -85,9 +85,12 @@ This will take a while now ...
 
     sudo dpkg -i linux-headers-5.11.0-16_5.11.0-16.17+audio_all.deb linux-headers-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb linux-image-unsigned-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb linux-modules-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb linux-modules-extra-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb linux-buildinfo-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb
 
-NOTE: After I executed this ... I got serious problems :-(
+NOTE: For some reason `dpkg` didn't want to let me install `linux-image-unsigned-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb` as it claimed that it was already installed. In this case I simply double clicked on the file and installed it via the Ubuntu gui installer.
 
-TODO: Continue here ...
+9) Reboot
+
+Reboot your system to make it use the new kernel.
+
 
 #### Bluetooth Problems
 
