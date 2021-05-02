@@ -1,6 +1,16 @@
 ## Running my DELL XPS-17 9700 with Ubuntu 21.04
 
+Even if I have been using Linux since 1999 or so, I wouldn't call me a "pro" on that. I'm more the Gui-centric person who likes to install pre-compiled stuff. So please excuse if this writeup might not be 100% correct. It's what I assumed to happen and be required. I'm happy for PRs if I'm wrong somewhere.
+
 ### Typical Problems
+
+#### Choppy audio as soon as the Mic is being used
+
+Obviously I had this problem before building my custom kernel.
+As soon as any application started using any of the microphones, the audio-output instantly was choppy and un-understandable (Someone wrote Dalek-Like audio, which I think fits nicely).
+
+I wanted to address this issue after enabling the general Audio support.
+However, as soon as I booted with my custom kernel it seems this was no longer an issue. So please follow the next chapter on how to build your custom kernel.
 
 #### No sound from the on-board audio
 
