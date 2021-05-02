@@ -1,0 +1,84 @@
+## Running my DELL XPS-17 9700 with Ubuntu 21.04
+
+### Typical Problems
+
+#### No Sound
+
+It seems that even if the Kernel starting with version 5.10 generally supports the on-board audio hardware used in my XPS-17 and Ubuntu 21.04 being based on 5.11, it should also support it.
+Unfortunately according to this post (https://blog.fts.scot/2020/07/04/dell-xps-2020-how-to-get-audio-working-on-linux/#comment-356) it seems the Ubuntu folks configured the kernel wrong when they built it.
+
+In general there are two settings that need changing:
+
+    CONFIG_SND_SOC_INTEL_SOUNDWIRE_SOF_MACH=m
+    CONFIG_SND_SOC_INTEL_USER_FRIENDLY_LONG_NAMES=y
+
+Unfortunately, for this you need to build your own version of the Ubuntu kernel.
+
+I followed the guide here (https://wiki.ubuntu.com/Kernel/BuildYourOwnKernel) for building, but it needed some adjustments.
+
+1) Setup the build environment:
+
+    sudo apt-get build-dep linux linux-image-$(uname -r)
+    sudo apt-get install libncurses-dev gawk flex bison openssl libssl-dev dkms libelf-dev libudev-dev libpci-dev libiberty-dev autoconf
+
+
+2) Get the sources
+
+Change to a directory where you want to have the sources checked out and run:
+
+    apt-get source linux-image-unsigned-$(uname -r)
+
+3) Change the configuration to support DELL XPS-17s audio devices
+
+Edit the following file `debian.master/config/amd64/config.common.amd64` by adding:
+
+    CONFIG_SND_SOC_INTEL_SOUNDWIRE_SOF_MACH=m
+    CONFIG_SND_SOC_INTEL_USER_FRIENDLY_LONG_NAMES=y
+
+4) Give the Kernel a new name
+
+We could now directly build the new kernel, however wouldn't we be able to distinguish it from the original one, so we have to give it a new name.
+
+Edit the file `debian.master/changelog`.
+The first line looks like this:
+
+    linux (5.11.0-16.16) hiruste; urgency=medium
+
+Append something to the version (I changed it to):
+
+    linux (5.11.0-16.16+audio) hiruste; urgency=medium
+
+TODO: Contiune here ...
+
+#### Bluetooth
+
+Every now and then, none of my `Bluetooth` devices work.
+If I open the `Bluetooth` settings, I either see `Bluetooth` enabled, but the panel beneath is still as if it's disabled.
+Or the enabled
+It seems there are two different cases when this happens and different resolution strategies:
+
+1. `Bluetooth` is locked by `rfkill`
+
+You can check this by running:
+
+    rfkill
+
+On the commandline. It will report for `WiFi` and `Bluetooth` if it's hard or soft locked:
+
+    cdutz@ChrisXPS:~/Projects/Private$ rfkill
+    ID TYPE      DEVICE      SOFT      HARD
+     0 bluetooth hci0   entsperrt entsperrt
+     1 wlan      phy0   entsperrt entsperrt
+
+If you see that it's locked, you can unlock it via the following command:
+
+    sudo rfkill unblock bluetooth
+
+At least in the case I encountered this was enough to make Bluetooth work again.
+
+2. `Bluetooth` is NOT locked by `rfkill`
+
+In all the other cases, all I needed to do was run:
+
+    sudo systemctl restart bluetooth
+
