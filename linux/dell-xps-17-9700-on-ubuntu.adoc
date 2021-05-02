@@ -2,7 +2,9 @@
 
 ### Typical Problems
 
-#### No Sound
+#### No sound from the on-board audio
+
+NOTE: Bluetooth audio seems to be working nicely
 
 It seems that even if the Kernel starting with version 5.10 generally supports the on-board audio hardware used in my XPS-17 and Ubuntu 21.04 being based on 5.11, it should also support it.
 Unfortunately according to this post (https://blog.fts.scot/2020/07/04/dell-xps-2020-how-to-get-audio-working-on-linux/#comment-356) it seems the Ubuntu folks configured the kernel wrong when they built it.
@@ -65,16 +67,27 @@ Append something to the version (I changed it to):
 
 6) Update the config:
 
+NOTE: Go through all variants with `Y`, or you'll get errors (In my case that was for `generic` and for `lowlatency`)
+
     LANG=C fakeroot debian/rules clean
     LANG=C fakeroot debian/rules editconfigs
 
 For each config, just hit `Save` and then `Exit`.
 
-NOTE: Go through all variants with `Y`, or you'll get errors (In my case that was for `generic` and for `lowlatency`)
+7) Build the Kernel:
+
+    LANG=C fakeroot debian/rules clean
+    LANG=C fakeroot debian/rules binary-headers binary-generic binary-perarch
+
+This will take a while now ...
+
+8) Install the new kernel
+
+    sudo dpkg -i linux-headers-5.11.0-16_5.11.0-16.17+audio_all.deb linux-headers-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb linux-image-unsigned-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb linux-modules-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb linux-modules-extra-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb linux-buildinfo-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb linux-tools-5.11.0-16_5.11.0-16.17+audio_amd64.deb linux-tools-5.11.0-16-generic_5.11.0-16.17+audio_amd64.deb
 
 TODO: Continue here ...
 
-#### Bluetooth
+#### Bluetooth Problems
 
 Every now and then, none of my `Bluetooth` devices work.
 If I open the `Bluetooth` settings, I either see `Bluetooth` enabled, but the panel beneath is still as if it's disabled.
