@@ -46,7 +46,7 @@ Edit the following file `debian.master/config/amd64/config.common.amd64` by addi
     CONFIG_SND_SOC_INTEL_SOUNDWIRE_SOF_MACH=m
     CONFIG_SND_SOC_INTEL_USER_FRIENDLY_LONG_NAMES=y
 
-Also edit `debian.master/config/annotations`:
+Also edit `debian.master/config/annotations` (It seems that in more recent versions of the kernel this setting is already changed to `y`):
 
 Change:
 
