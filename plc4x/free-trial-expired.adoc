@@ -48,7 +48,7 @@ So I will probably shut my business down myself in April 2022 (which is 3 months
 
 As a last attempt to keep the lights on, I am switching the mode I am providing support for PLC4X: I am no longer implementing features users might need, I am no longer instantly fixing bugs for free on the weekend. I will continue help others fix and build stuff themselves and if I personally need something or want to try something out, I'll continue doing this. However, I will no longer port PLC4X to new languages, port drivers to new languages, implement new drivers or integration modules and most definitely not help companies with consulting, training and support for free.
 
-For support I always provided commercial support and will continue to do so. Same with consulting and training. But beyond that, I have setup a new section on my website, in which I list various things that have been asked for a lot in the past. Each initiative has a price-tag. Companies liking to see one of these initiatives become a reality are free to back the campaigns in a crowdfunding-like fashion. As soon as the funding goal is reached, I will start working on it.
+For support, I always provided commercial support and will continue to do so. Same with consulting and training. But beyond that, I have set up a new section on my website, in which I list various things that have been asked for a lot in the past. Each initiative has a price-tag. Companies liking to see one of these initiatives become a reality are free to back the campaigns in a crowdfunding-like fashion. As soon as the funding goal is reached, I will start working on it.
 
 If the industry doesn't support the people behind open source, I at least will from now on stop blindly supporting them for free.
 
