@@ -8,7 +8,7 @@ Working on Apache PLC4X is a huge amount of work and expensive as it requires pu
 
 ## Long version
 
-I started working on what was to become Apache PLC4X about 10 years ago (way before Industry 4.0 was a thing), but I gave up on it temporarily after a few months. At that time I wanted to provide Software for the automation industry, but my plans were to implement my own proprietary software stack for industrial communication, which only I could use to building software (This being my USP). However, I noticed quickly that this is a huge undertaking - nothing a single person could possibly implement all on his own. I finally decided to take a full employment position.
+I started working on what was to become Apache PLC4X about 10 years ago (way before Industry 4.0 was a thing), but I gave up on it temporarily after a few months. At that time I wanted to provide Software for the automation industry, but my plans were to implement my own proprietary software stack for industrial communication, which only I could use to build custom solutions (This being my USP). However, I noticed quickly that this is a huge undertaking - nothing a single person could possibly implement all on his own. I finally decided to take a full employment position.
 
 About 5 years later all of this "Industry 4.0" was popping up everywhere. I was seeing a big opportunity for making production more efficient, wasting less resources and even making products live longer.
 
