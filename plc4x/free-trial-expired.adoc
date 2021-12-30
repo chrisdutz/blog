@@ -4,7 +4,11 @@ image::last-chance.jpg[]
 
 ## TL/DR
 
-Working on Apache PLC4X is a huge amount of work and expensive as it requires purchasing extremely expensive hard- and software. The industry seems to like using PLC4X and open-source in general, but doesn't seem to be willing to support the ones working on it. So, I will stop providing free community support for PLC4X. You will be able to get commercial consulting and support via my website at https://c-ware.de.
+Working on Apache PLC4X is a huge amount of work and expensive as it requires purchasing extremely expensive hard- and software. The industry seems to like using PLC4X and open-source in general, but doesn't seem to be willing to support the ones working on it. So, I will stop providing free community support for PLC4X.
+
+You will be able to get commercial consulting, training and support via my website at https://c-ware.de and beyond that I have added a crowd-funding-like system for PLC4X feature development.
+
+This is my final attempt. If this doesn't help me get my business into the profitable zone till March 2022, I will close it down and there will be no further form of support from my side.
 
 ## Long version
 
