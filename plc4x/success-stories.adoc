@@ -14,7 +14,7 @@ So far that team seems to have been trying to use OPC-UA to do this, however whe
 
 So with a team of 2 people for 3 days we came and tried out my brand-new PLC4X-Kafka-Connect adapter. We mainly needed time for configuring the 2600 data-point-addresses as well as a dynamic number of PLC connections.
 
-Within this timeframe we were able to collect all data-points within 200ms without overloading the PLCs. Also were we able to process 200 PLCs on the same standard VM the OPC-UA variant was able to process 10. (We tried it with 100 and could see the VM running at a constant 40% load)
+Within this timeframe we were able to collect all data-points within 200ms without overloading the PLCs. Also were we able to process 600 PLCs on the same standard VM the OPC-UA variant was able to process 10. (We tried it with 200 and could see the VM running at a constant 30% load, which still left 10% for safety)
 
 So not only didn't we achieve the goal the customer aimed at, we were able to do it a two-digit number of millions cheaper.
 
@@ -26,7 +26,7 @@ Calculation:
 - For the server side: 26000 / 10 * 4000€ = 10.400.000€
 - In total: 20.800.000€
 
-One thing that we didn't even take into account, was that only very new S7 devices supported OPC-UA. So in general a lot of devices would have had to be replaced, retrofitted or updated.
+Some things that we didn't even take into account in this calculation, was that only very new S7 devices supported OPC-UA. So in general a lot of devices would have had to be replaced, retrofitted or updated. And usually the hard- and software-costs for running 60 times more VMs is probably a bit more than nothing.
 
 What our solution had as advantage on top of what the customer asked for: The Kafka Connect setup would have provided a fault-tolerant automatic failover without any configuration needed. If in the classical approach of the other team one VM goes down, all PLCs attached to that vm stop sending data.
 
