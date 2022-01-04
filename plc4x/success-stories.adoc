@@ -1,0 +1,56 @@
+# Success stories
+
+Usually for a success story a user of something reports some cool facts around something. However, in case of Apache PLC4X not a single company was willing to do this. Generally it always boiled down to "politics".
+
+I'm trying to write down what we have achieved in the past however I'm not allowed to go into details, and I'm not allowed to name the companies involved.
+
+## Loading massive amounts of PLC data
+
+A major manufacturer of things that you can see on our roads all over the planet contacted me after having read my first article on PLC4X that I got published in one a German tech magazine.
+
+In this case a team from a major automation vendor was trying to implement a system that was able to read something round 2600 data-points from every S7 PLC every 2 seconds and pump this data into Apache Kafka. In total, we were talking about 26000 devices world-wide.
+
+So far that team seems to have been trying to use OPC-UA to do this, however whenever they tried going beyond 200 data-points per 2 seconds, the S7 PLCs went into lockdown due to excessive processing time in the IO component. On the intermediate VM which was collecting the data using a OPC-UA client library and manually pumping that to Kafka the VM was at it's limit when processing 10 PLCs.
+
+So with a team of 2 people for 3 days we came and tried out my brand-new PLC4X-Kafka-Connect adapter. We mainly needed time for configuring the 2600 data-point-addresses as well as a dynamic number of PLC connections.
+
+Within this timeframe we were able to collect all data-points within 200ms without overloading the PLCs. Also were we able to process 200 PLCs on the same standard VM the OPC-UA variant was able to process 10. (We tried it with 100 and could see the VM running at a constant 40% load)
+
+So not only didn't we achieve the goal the customer aimed at, we were able to do it a two-digit number of millions cheaper.
+
+Calculation:
+
+- An S7 supports OPC-UA but enabling that costs approx 400€ in licence costs per device
+- The OPC-UA Driver they used cost approx. 4000€ per node
+- For the client side: 26000 x 400€ = 10.400.000€
+- For the server side: 26000 / 10 * 4000€ = 10.400.000€
+- In total: 20.800.000€
+
+One thing that we didn't even take into account, was that only very new S7 devices supported OPC-UA. So in general a lot of devices would have had to be replaced, retrofitted or updated.
+
+What our solution had as advantage on top of what the customer asked for: The Kafka Connect setup would have provided a fault-tolerant automatic failover without any configuration needed. If in the classical approach of the other team one VM goes down, all PLCs attached to that vm stop sending data.
+
+In the end we were able to load 1200 times more data:
+13 times more data-points in a 10th of the time while producing 1/20th of the cpu-load on the VMs.
+
+## Secure data-acquisition in pharma-production
+
+When it comes to pharmaceutical production, things tend to get a lot more complicated. Just as an example: If you want to sell your products to the US market, your production must apply to the FDA rules. These enforce some pretty strict rules for network security.
+
+In one of our POCs our customer had the challenge of having a team of data scientists for optimizing things in the area of production at that company. The problem is, that data-scientists need data to do their thing.
+
+As I mentioned getting data in FDA regulated production is tricky. So far there were two options:
+1) Copying data onto a hard-drive and taking that data for a bike ride though the company
+2) Installing a system of audited, validated and certified software.
+
+I think we all agree 1) is sort of sub-ideal. Problem with option 2 is that there is only a limited number of products supporting this. Due to the extremely expensive process of having the software audited and certified the product is extremely expensive too. I was told a normal license of this cost 100.000€ per installation while allowing to provide 10.000 data-points. The main dilemma now was, that you need to optimize production quite a bit in order to get the 100.000€ back, which usually killed all innovation projects in this area.
+
+So what we did: We implemented passive-mode divers. These are drivers that purely listen to network traffic and don't emit any traffic themselves.
+
+We also setup something we called a "network-diode" in the lack of such a product existing before. This device ensures on a network level that not a single ethernet frame can be sent to the secure network.
+
+With this I setup a little demo system on a Raspberry PI using InfluxDB and Grafana. That system worked without configuration and instantly started showing changes to the production network. It even showed changes faster than the DeltaV control-system console they used.
+
+This brings me to another problem with the classical approach: This involved a chain of 5 different systems. So if on the outside someone needed a new parameter, 5 systems needed to be changed, tested, released. In the end data appeared on the outside with a significant delay of several minutes.
+
+With our approach, all that was needed for making a new parameter available, was to change the control-system to log an additional parameter.
