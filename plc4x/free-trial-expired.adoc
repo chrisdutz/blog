@@ -8,9 +8,9 @@ Working on Apache PLC4X is a huge amount of work and expensive as it requires pu
 
 You will be able to get commercial consulting, training and support via my website at https://c-ware.de and beyond that I have added a crowd-funding-like system for PLC4X feature development.
 
-Beyond that I'll be starting to implement commercial integration modules that allow using PLC4X in commercial industrial products. These modules will not be open-sourced and not be available for free.
+I'll also be starting to implement commercial integration modules that allow using PLC4X in commercial industrial products. These modules will not be open-sourced and not be available for free.
 
-This is my final attempt. If this doesn't help me get my business into the profitable zone in 2022, I will close it down and there will be no further form of support from my side.
+This is my final attempt. If this also doesn't help at getting at least some form of financial attribution for my hard work, I will close down my business and there will be no further form of support from my side.
 
 ## Long version
 
@@ -50,28 +50,28 @@ Unfortunately, Covid didn't go away and after a few months of positive numbers t
 
 Luckily for the both of us, at that time Shaun from Mapped approached me, as he was looking for folks able to help communicate with building automation systems. I was happy to join, however I insisted on being able to continue running my business as a side-thing (as long as it has no impact on my work for Mapped). Because I knew: If there's no place a company could get commercial support or consulting from, I could probably just bury the project.
 
-So since then, I have been working hard on the parts of PLC4X, which we needed for our work at Mapped. These were mainly porting PLC4X to Go and working on drivers and auto-discovery used in building automation systems, but not on anything considered "community-work".
+So since then, I have been working hard on the parts of PLC4X, which we needed for our work at Mapped. These were mainly porting PLC4X to Go and working on drivers and auto-discovery used in building automation systems, but not really much on things considered baseline project-work.
 
 At Apache, we know community is the hardest but also the most important part. So, after working times, on weekends and even on most of my holidays, I kept on pushing the open-source project, writing reports, doing releases, mentoring people showing interest, submitting and performing talks, providing fee community support, addressing security issues, doing normal project housekeeping. In general: Keeping the lights on.
 
-In 2020 another problem came to the pre-existing ones: In Germany a company needs to be profitable. If you run your business at a deficit for too long, you get your business closed, and you're even forced to pay back a lot of taxes.
+To make things worse, in 2020 another problem came to the pre-existing ones: In Germany a company needs to be profitable. If you run your business at a deficit for too long, you get your business closed, and then you usually even have to pay back a lot of taxes.
 
 As I have been focusing on PLC4X without getting many paid gigs, but I needed to pay a lot for purchasing automation hard- and software, I have been running my (side-) business at a deficit for way too long now. I managed to convince the tax officials to give me a bit more time to become profitable (after all that's my goal).
 
-I think this year I even managed to at least stay out of the red numbers, solely thanks to the Spanish company Zylk and the only paid gig I did in 2021. They hired me for implementing an open-source Profinet driver. In addition, I kept investments at an absolute minimum at the same time.
+I think this year I even managed to at least stay out of the red numbers, solely thanks to the Spanish company Zylk and the only paid gig I did in 2021. They hired me for implementing an open-source Profinet driver as part of the Apache PLC4X project. In addition, I kept investments at an absolute minimum at the same time.
 
-However, at the end of this year, one thing is different: I'm sick of fighting. I'm sick of investing my precious free time for others, burning up and not really getting anything back. I'm sick of how everything in the OT is pay-to-play and especially how everything in the OT is clearly communicating on a post-fact way. While in the past it was considered good to back your claims by facts, now it's just about spreading fake-news and the one being loudest, with the biggest marketing budget, is going to be the winner. I'm not willing to play that game.
+However, at the end of this year, one thing is different: I'm sick of fighting. I'm sick of investing my precious free time for others, burning up and not really getting anything back. Just as with the folks currently working in healthcare: Even if you think kind words and clapping is enough ... believe me: It's not. I'm sick of how everything in the OT is pay-to-play and especially how everything in the OT is clearly communicating on a post-fact way. While in the past it was considered good to back your claims by facts, now it's just about spreading what the industry wants to be true and the one being loudest, with the biggest marketing budget, is going to be the winner. I'm not willing to play that game anymore.
 
 So if things don't change in 2022 I have planned to shut down my business myself. Sadly this is also the year this business would have reached its 25-year anniversary.
 
 As a last attempt to keep the lights on, I am switching the mode I am providing support for PLC4X: I am no longer implementing features users might need, I am no longer instantly fixing bugs for free on the weekend. Especially I will not invest my private money to buy expensive hardware in order to implement or fix stuff I am then giving away for free.
 
-I will continue help others fix and build stuff themselves and if I personally need something for my work at Mapped or just for fun or want to try something out, I'll continue doing this. However, I will no longer port PLC4X to new languages, port drivers to new languages, implement new drivers or integration modules and most definitely not help companies with consulting, training and support for free.
+I will continue help others fix and build stuff themselves and if I personally need something for my work at Mapped or just for fun or want to try something out, I'll continue doing this. However, I will no longer port PLC4X to new languages, port drivers to new languages, implement new drivers or integration modules and most definitely not help companies with free consulting, training and support.
 
-For support, I always have offered commercial support, consulting and training and will continue to do so. Beyond that, I have even set up a new section on my website, in which I list various things that have been asked for a lot of times in the past. This list can be extended on request. Each of these tasks has a price-tag assigned to it. Companies liking to see one of these initiatives become a reality are free to back the campaigns in a crowdfunding-like fashion. As soon as the funding goal is reached, I will start working on it, not before.
+For this, I have always offered commercial support, consulting and training and will continue to do so. Beyond that, I have even set up a new section on my website, in which I list various PLC4X features that have been asked for a lot of times in the past. This list can be extended on request. Each of these tasks has a price-tag assigned to it. Companies liking to see one of these initiatives become a reality are free to back the campaigns in a crowdfunding-like fashion. As soon as the funding goal is reached, I will start working on it, not before. You can also contact me if you want to fund a campaign differently.
+
+Another thing I'll probably start doing, is writing paid commercial integration modules for IoT platforms with a commercial marketplace system. I'll probably make them available at competitive prices.
 
 If the industry doesn't support the people behind open-source, I at least will from now on stop blindly supporting them for free.
-
-One thing I'll probably start doing, is writing paid commercial integration modules for IoT platforms with a commercial marketplace system. I'll probably make them available at competitive prices.
 
 You would do me a great favor, if you could share this with people you know who you think should read it ...
