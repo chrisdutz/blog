@@ -4,11 +4,11 @@ image::last-chance.jpg[]
 
 ## TL/DR
 
-Working on Apache PLC4X is a huge amount of work and is expensive, as it requires purchasing expensive hard- and software. The industry seems to like using PLC4X and open-source in general, but doesn't seem to be willing to support the people working on it. So, I will stop providing free community support for PLC4X.
+Working on Apache PLC4X is a huge amount of work and it's expensive, as it requires purchasing expensive hard- and software. The industry seems to like using PLC4X and open-source in general, but doesn't seem to be willing to support the people working on it. So, I will stop providing free community support for PLC4X.
 
 You will be able to get commercial consulting, training and support via my website at https://c-ware.de and beyond that I have added a crowd-funding-like system for PLC4X feature development. Feel free to have a look at the currently listed initiatives here: https://c-ware.de/en/cf-listing-page/
 
-I'll also be starting to implement commercial integration modules that allow using PLC4X in commercial industrial products. These modules will not be open-sourced and not be available for free.
+I'll also be starting to implement commercial integration-modules that allow using PLC4X in commercial industrial products. These modules will not be open-sourced and not be available for free.
 
 This is my final attempt. If this also doesn't help with getting at least some form of financial attribution for my hard work, I will close down my business and there will be no further form of support from my side.
 
@@ -20,11 +20,11 @@ About 5 years later all of this "Industry 4.0" was popping up everywhere. I was 
 
 Unfortunately, I was only seeing super expensive solutions provided by the major automation vendors. The price tags of all of these were usually somewhere around 10k€ per user per year. I knew smaller companies wouldn't be able to participate in the quest for digitizing their production as the license costs for these products would simply be eating up what the improvements could possibly bring them.
 
-However, I knew open source had all the tools needed for digitizing automation processes. If there only was a way to access the data on the production machinery.
+However, I knew open-source had all the tools needed for digitizing automation processes. If there only was a way to access the data on the production machinery.
 
 Industrial automation was and still is using a huge number of specialized protocols for which there were only some badly licensed open-source libraries (from a business perspective) or commercial libraries with average price-tags of 4k€ per node running a driver. This was when I remembered what I had been working on 5 years before. However, this time I didn't want to do it all on my own, I wanted to do it the open-source way.
 
-Luckily my former employer: codecentric believed in my vision of enabling companies to digitize their processes using open source, and I was allowed to work fulltime on Apache PLC4X for about 3,5 years. It was the general idea to earn money with training and consulting in this area, based on the open-source expertise that was available in the company (Industrial connectivity, big-data, machine-learning, augmented-/virtual-reality, digitization in general).
+Luckily my former employer: codecentric believed in my vision of enabling companies to digitize their processes using open-source, and I was allowed to work fulltime on Apache PLC4X for about 3,5 years. It was the general idea to earn money with training and consulting in this area, based on the open-source expertise that was available in the company (Industrial connectivity, big-data, machine-learning, augmented-/virtual-reality, digitization in general).
 
 In Christian Glomb's talk (Siemens) at 2021s EclipseCon, he stated that over 50% of each industrial IoT projects costs were data-integration costs. This huge block is what Apache PLC4X aims at reducing drastically. So generally this hope was justified.
 
