@@ -26,6 +26,8 @@ Luckily my former employer: codecentric believed in my vision of enabling compan
 
 In Christian Glomb's talk (Siemens) at 2021s EclipseCon, he stated that over 50% of each industrial IoT projects costs were data-integration costs. This huge block is what Apache PLC4X aims at reducing drastically. So generally this hope was justified.
 
+image::toddyman.png[]
+
 Like with typical Machine-Learning and AI projects, the job of the data-engineer is the least fun part and everyone wants to be a data-scientist, that works with a magically curated data-lake. This is the same with industrial data-integration. Most focus goes onto the projects that allow you to do great things with industrial data, however almost nobody is willing to work on the part of actually getting the data.
 
 Unfortunately, we couldn't have imagined how hard it is to grab hold in the automation industry market. Every POC we did was a huge success. Here I'm not talking about simply achieving the customer's goal, it was more: drastically exceeding these expectations: Like being able to save 20.000.000€ in license costs compared to the commercial solution, being 130 times more performant than the commercial solution, or providing extremely secure unlimited real-time data for machine learning where the fastest industrial solution cost 100.000€ and more per machine in license costs and allowed only 10k data-points with a latency of a few minutes. (See: the link:success-stories.adoc[success-stories] post for details)
