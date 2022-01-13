@@ -10,6 +10,8 @@ You will be able to get commercial consulting, training and support from me via 
 
 This is my final attempt. If this also doesn't help with getting at least some form of financial attribution for my hard work, I will close down my business and there will be no further form of support from my side.
 
+NOTE: The Apache PLC4X project is more than just me, even if I'm the one with the most commits, we still have a large number of other contributors. Also will the project continue to provide free community support.
+
 ## Long version
 
 I started working on what was to become Apache PLC4X about 10 years ago (way before Industry 4.0 was a thing), but I gave up on it after a few months of working really hard on it. At that time I wanted to provide Software for the automation industry, but my plans were to implement my own proprietary software stack for industrial communication, which only I could use to build custom solutions (This being my USP). However, I noticed quickly that this is a huge undertaking - nothing a single person could possibly implement all on his own. I finally decided to take a full employment position and give up on this idea.
