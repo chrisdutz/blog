@@ -10,7 +10,7 @@ You will be able to get commercial consulting, training and support from me via 
 
 This is my final attempt. If this also doesn't help with getting at least some form of financial attribution for my hard work, I will close down my business and there will be no further form of support from my side.
 
-NOTE: The Apache PLC4X project is more than just me, even if I'm the one with the most commits, we still have a large number of other contributors. Also will the project continue to provide free community support.
+NOTE: Nobody is talking about giving up the project. The Apache PLC4X project is more than just me, even if I'm the one with the most commits, we still have a large number of other contributors. Also will the project continue to provide free community support and I will continue to work on it ... just no longer for free.
 
 ## Long version
 
