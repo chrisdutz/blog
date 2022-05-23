@@ -1,0 +1,264 @@
+= A story of Industry and Open-Source
+
+== Once upon a time ...
+
+Or possibly: How IT and OT grew apart in the last 30 years.
+(Remark: The IT used in automation is usually referred to as OT - Operational Technology)
+
+In the 90s the IT and the OT world were pretty much aligned and very similar to each other.
+At that time Microsoft was dominating the market of operating-systems.
+But in general this was a time in which many suppliers of proprietary software earned a lot of money.
+
+These companies also were driving innovation.
+Everything was possible for which these vendors were offering solutions for.
+During this time, a Vendor-Lock-In was something both suppliers and customers were both happy with, as it brought so much comfort for the user and so much reoccurring revenue for the companies providing these solutions.
+
+This changed at the end of the 90s.
+First initiatives no longer wanted to accept this. Groups of like-minded people joined forces to change this.
+During this time first versions of Linux were created, new webservers like the Apache Webserver, the Samba project, which aimed at opening Windows networks for Unix and Linux operating systems, were brought to life.
+These people called their way of collaborating: Open-Source (OS).
+
+At that time OS was usually written in C and C++.
+This probably slowed OS in its first years as many people were not able or willing to dig into these usually quite complex projects.
+Pretty much at this time however, a new programming language entered the arena: Java.
+Based on Open-Source also the first pure-java build systems were implemented, which lowered the bar for building software greatly.
+Over time, Java became the dominant programming language.
+OS grew and the philosophy found more and more supporters.
+
+Pretty much during this time, the paths of IT and OT split.
+
+While the commercial software vendors had no interest, changing a working solution, in the OS world usually many competing solutions to a problem evolved.
+Not all solutions were successful and generally accepted, but sometimes even the dominating solution was replaced by a new competing one in a very short period of time.
+What one might seem like a waste of resources for outsiders, actually is one of OSes biggest strengths: Many people try out something new.
+Good ideas survive, bad ones are abandoned.
+Projects adopt good ideas from other projects and hereby grow.
+Separated from commercial interest, developers just try out new ideas.
+Their motivation, typically just curiosity or the simple fact that nobody else tried it before.
+This way of thinking has created a huge burst in innovations.
+
+From the OT perspective the problem was, that it couldn't and didn't want to deal with this dynamic evolution.
+In a market, where cycles are planned in timeframes of years, OS with its innovation speed was just not manageable.
+Till then companies have never had any issues with buying the solutions of the established vendors and nobody wanted to risk anything.
+
+In the early 2000s (2000-2010) companies like Amazon or Google didn't want to waste the compute-power they had sitting in their data-centers for peak-loads and first cloud-offerings appeared.
+This concept brought completely new concepts to life: BigData, Microservices and Containers were direct results of this development.
+These distributed systems being more complex to run and maintain created a new concept of "Software as a Service".
+While in the 90s there was only the option to buy and run a piece of software, you could now simply rent it and have someone else deal with the tricky parts.
+
+Established project management strategies could no longer cope with the dynamics modern IT had to deal with.
+While in the 90s projects werde managed using the Waterfall-Modell or RUP, in the 2010s more and more agile methods were used.
+
+Another market grew way more than the others since the increased adoption of open-source: Consulting.
+While in the past it was easily manageable to train their employees in the established tools and concepts in the 90s, this was generally no longer possible in the 2010s.
+In order to address this problem, consultants were hired as travelling knowledge leaders to bring new skills into the company.
+If a company wants to adopt a new technology, it was usually way cheaper to hire consultants specialized in these topics and to profit from the know-howe transfer that usually is part of such a consulting contract.
+
+As everywhere, large corporations usually down't work with individuals, many consultants work for larger consulting companies.
+In parallel also a number of companies evolved that are specialized on providing freelancers.
+
+Sometimes an OS project even becomes so popular, that commercial companies evolve around them.
+These companies usually provide services such as: Consulting, training, support.
+Some develop commercial extensions to OS projects, which provide features large corporations typically need.
+Some even offer to run the software for their customers as Software as a service (Saas).
+
+A lot has changed in the IT world, however only little has changed in the OT world.
+Some vendors updated the operating systems, but significant innovations, like in the IT world, didn't happen.
+Therefore, only few experts in the OT world paid attention to the changes in the IT world.
+
+Especially some time around 2017 this now greatly backfires on the entire industry.
+
+In this time new concepts, usually aggregated with the topic "Industry 4.0" and Smart Factory, started to feed the interest of the industry.
+The established OT vendors quickly realized what a huge market this could be and fueled the fire with gigantic marketing budgets.
+Not a single one of the big OT vendors is currently not offering its own proprietary Industry 4.0 platform.
+
+However, if you have a deeper look at the topics aggregated with the term "Industry 4.0", the IT experts will probably realize quickly, that for all of these problems there are many OS solutions available already.
+What many might also not be aware of: Most of the commercial solutions sold by the OT vendors usually contain a lot of OS under the hood.
+
+The only part OS was missing good solutions, was for universal data-exchange with industrial hardware and equipment.
+The industry-solution to this problem was a new protocol called: OPC-UA.
+Parallel to this, a well established protocol from the IT-world found its way into the OT-world: MQTT.
+However, both solutions require retrofitting existing equipment, which usually is expensive and due to current supply chain difficulties even might not be possible.
+
+As there was no OS solution in this sector, I initiated the Apache PLC4X project in 2017.
+The goal of this project is simplifying the communication with industrial equipment by directly using the protocols existing devices already supported but hiding their complexity.
+With Apache PLC4X it is now possible to build solutions for all Industry 4.0 use-cases using 100% OS without requiring a retrofit of exising systems.
+
+== What is open-source (OS)?
+
+In the years from 2017-2018 I visited a large number of companies in the automation sector.
+I tried to seed the idea of using OS to solve their problems.
+Most of them didn't understand the concept.
+For most of them I was investing my time to provide them with free software.
+Free like in free beer.
+
+However, they never realized that even if the OS software generally is free, using OS usually always comes with a cost.
+
+One of the reasons is: Yes you can use the software for free, but you can't demand support for free.
+Another reason is: OS is generally never finished software, but usually building blocks for building software.
+You typically can't just download, install and use OS software to solve your problems.
+So even if a company doesn't require commercial support, the company has to invest time and/or money.
+
+In contrast to the proprietary commercial solutions, in this case the company is free to decide how to invest: Does the company want to invest by giving their employees the time to work on it or does it pay consultants to help?
+Some even use hybrid models in which the own employees work on a solution together with external consultants.
+For me, this is generally the best option: It supports the people working on creating OS and allows building up expertise inside the company.
+
+Also can OS be considered a form of cooperation, even between competitors.
+Here competitors can work on something all need, but which are not essential parts of their core business.
+
+As an example I might spotlight the community behind Apache PLC4X: Here people from multiple companies are working together on implementing communication drivers for industrial protocols.
+Some companies our community members are working for, definitely are competitors, however none of these want to make a living out of selling drivers but all need working solutions for communicating with industrial equipment.
+Wy working on PLC4X together, each company invests work-time of their employees, but all get out the full product.
+
+Another example would be the OSADL (Open Source Automation Development Lab eG).
+Here a larger number of companies have joined forces for creating a certified real-time Linux for their products.
+
+One of the biggest advantages of OS-development is, that this way companies can free themselves from relying on another company.
+If the vendor providing a product another company relies on, gives up on this product, there generally is nothing the company can do about this.
+With OS the company could continue to apply fixes or add new features, or they could hire people to do it for them.
+
+Another thing I really like with OS, is that companies can try out new ideas.
+Here first steps can be done with the pure OS version and switch to commercial offerings step by step as needed.
+
+Commercial offerings usually are:
+
+- Enterprise features
+- Software as a service (Saas)
+- Consulting
+- Training
+- Support (Even with CLAs)
+
+Active participation in OS communities also allows companies to influence the future of the products they rely on.
+
+Yet another reason that definitely plays out in favor of OS is that for proprietary solutions, usually a company has to rely on the employees of the vendor itself, with OS the company is able to choose form a huge pool of experienced consultants from many companies.
+
+The people from this pool of highly skilled experts usually also pay a lot of attention to an open adoption of OS and its concepts.
+So active participation on open-source definitely pays out on the recruiting side.
+
+In a study that the OpenForum Europe and Fraunhofer ISI did [1], the results showed that every euro invested in OS pays out four-times.
+
+== So what's the problem?
+
+If it hasn't happened yet, the industry should realize quickly that Industry 4.0 is more an IT topic as it is an OT topic.
+
+Therefore, the typical automation companies are probably not directly have the necessary know-how to provide solutions.
+Most of them have realized this too.
+Starting 2017 they all have started to pull know-how into the company.
+Usually this happened by buying up companies with know-how and with pretty aggressive recruiting.
+
+The problem is: We already had shortages of experienced IT personal before the OT industry realized IT is the new holy grail.
+No company will be able to hire enough highly skilled people to cover all bases needed.
+Collaboration is inevitable.
+Know-How-Transfer is generally the only thinkable option and OS is the perfect model of collaboration for this.
+
+The OT industry is used to thinking in products, but it is growing more and more important to start thinking in services.
+
+With the typical complexity of Industry 4.0 projects, using the waterfall modell or RUP for managing these, is guaranteed to fail.
+The only option here is to adopt agile methods.
+
+Yet another problem is, that most industrial equipment was developed to communicated using a highly secured network.
+As a result of this, most modern industrial equipment is almost unprotected against malicious access.
+Simply connecting these networks with the company network or even the internet would usually be fatal.
+
+However, as an IT consultant it currently is almost impossible to grab hold in the OT industry.
+
+On the one side large corporations are with their unflexible structures and procedures are seldom interesting employers for OS enthusiasts.
+Beyond that, many of these are highly specialized experts, a single company usually doesn't provide enough room for these to be happy over a prolonged period of time.
+That's generally the reason they chose a position as consultant.
+
+Unfortunately the purchasing departments of larger companies usually only make business with so-called preferred vendors.
+These are often also larger companies where contracts have been established to "ease the process of purchasing products or services".
+Mostly, this is mainly about lowering the price as much as possible and less about easing the actual purchase.
+However, this is something the IT world knows just as well.
+
+The big problem with this however is, the OT world has well established preferred vendor relations to suppliers of products, but almost none at all towards purchasing services such as consulting.
+Therefore, the companies the IT consultants work for usually are never listed and anything going beyond a small proof of concept is simply not possible.
+Even if a small number of IT companies managed to break this boundary, typically this happened for well known IT companies, that operate around well established OS projects.
+It will probably take several years for the normal IT consultancies to be listed here.
+
+To add to the growing list of problems I already mentioned, some really big problems result of the way OT companies work in general.
+(All of these I didn't make up, but was told behind closed doors ... usually at conferences or industrial fair receptions after a few drinks)
+
+- In some companies prestige of executives are directly bound to the budget they are able to decide over and not how well they spend what they have. Using OS would directly result in less expenses in license-costs. This would result in a smaller budget and this would directly reduce the prestige of that manager.
+- Pricing in the OT world is an intransparent mess. If you've ever tried finding a price for a given product, this usually is impossible and every price is negotiated. Many employees in the purchasing departments, tie their prestige to the conditions they get from the vendors. Many of these are now afraid, if the company they work for would start buying less of a vendors products, this would result in a cut of special conditions and this would again reduce their prestige and of course could influence the invitation to the next incentive event of that vendor.
+- Last case I've run into was that it is not that uncommon that vendors of industrial products become shareholders of their customers. As shareholders, they have certain options to control which companies these customers do business with.
+
+Changing all of this is particularly challenging, as, as I mentioned before, for the last 25 years there has been only little exchange between IT and OT.
+Unfortunately, many of the decision-makers in the industry come from the OT-world and therefore deeply rooted with the OT products and vendors.
+Convincing these would require being present at industrial fairs with huge and impressive booths.
+I guess we can all imagine that this is simply impossible for OS, which usually has no marketing budget at all.
+Perhaps over time large consultancies will start to present their services there, but this will take time and till then not much will change.
+
+When taking to representatives of the industry probably the most annoying problem, that I always have, are NDAs.
+In the last 6 years I haven't done a single POC for any company where I didn't have to sign an NDA that prevented me from talking about it.
+So whenever I was advocating OS in the industry, I usually always got the question: "So who's using OS and what are they using it for?".
+In this cass I always had to answer: "Way more than you think, however I'm not allowed to talk about it".
+That doesn't really help.
+
+So what's can be the result of this?
+
+For the IT and OS expert there are generally two options:
+
+1. The consultant changes its focus and turns towards longer running projects in other customer-areas
+2. The freelancer accepts a full-time-employment offer
+
+In both cases the expert is no longer available for the industry.
+
+Considering the option of companies from the OT world trying to hire people from the IT and OS world, I've noticed that (at least in Germany) companies are offering unreasonably low salaries.
+When questioning them about that, I usually heard that higher salaries wouldn't fit into the company's salary structure.
+
+One thing the companies should realise, is that the rest of the world is used to IT salaries and are happily willing to pay them.
+Why should a highly qualified expert voluntarily pass on a much higher salary, just because the OT-world is not used to them yet?
+Beyond the reduced payment here (again ... generally in Germany ... I don't know if this applies to other areas of the world), these OT companies also don't provide typical benefits like:
+
+- Remote work
+- Flexible working times
+- Encouraging technical exchange
+- Free PTO
+
+I really had to grin quite often when I started reading the OT magazines in the last years.
+Here many companies are complaining the shrinking pool of highly skilled experts.
+The bitter reality (for these companies) is that the pool is not shrinking at all.
+It's actually growing.
+People are simply not reacting to their job offers.
+Offering a fruit basket simply doesn't make your company a fresh and hip company that attracts them.
+
+Some companies have realized some problems and have founded some nice and flashy digitization hubs.
+Here they are trying to provide an environment that is more tempting for highly skilled IT experts, however these hubs are usually tied into the corporation quite strictly and most of the flexibility ends where the work starts.
+
+== Conclusion
+
+The world we live in is getting more and more dynamic.
+Companies that are not able to adjust to change quickly will not survive for long in this environment.
+
+The typical approach of the (German) industry is completely useless for dealing with such dynamic requirements.
+
+In order to be able to compete with the competition, a consequent digitization is the only option.
+Unfortunately you can't buy and install this, like the products the industry is used to.
+The companies are required to accept this and adjust on all levels.
+
+The modern IT world and especially the OS world have solutions for most of the most challenging problems of the industry.
+Beyond that there's an army of highly skilled professionals to help.
+
+However, the industry needs to realize, that in the IT world other rules apply than in the OT world.
+The IT world doesn't have and won't adjust to the OT worlds wishes.
+We had full employment in the IT, even before Industry 4.0 was a thing and nothing has changed here.
+
+Especially the German industry desperately needs to move out of it's comfort-zone, or it will develop into a cage.
+
+Probably the most prominent example are electrical cars: Here the German industry had the opinion that nobody wants or needs them and therefore no impulses were set in that direction.
+However, all of a sudden new and fresh US companies entered the market and proved them wrong.
+Of course first versions of a Tesla had their problems and couldn't compete with our famous Audi "Spaltmaß" (Something probably only Germans have a word for ... at least there was nothing in English that I could find on Wikipedia [2]).
+
+However, they got better.
+
+They got better fast.
+
+And now even the German car manufacturers had to notice: It's not all about the "Spaltmaß".
+
+Now all of a sudden all German car manufacturers are trying to catch up, and it's costing them an unbelievable amount of money and effort.
+
+
+
+[1] https://openforumeurope.org/publications/study-about-the-impact-of-open-source-software-and-hardware-on-technological-independence-competitiveness-and-innovation-in-the-eu-economy/
+
+[2] https://de.wikipedia.org/wiki/Spaltma%C3%9F
