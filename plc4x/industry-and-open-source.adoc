@@ -10,25 +10,29 @@ At that time Microsoft was dominating the market of operating-systems.
 But in general this was a time in which many suppliers of proprietary software earned a lot of money.
 
 These companies also were driving innovation.
-Everything was possible for which these vendors were offering solutions for.
-During this time, a Vendor-Lock-In was something both suppliers and customers were both happy with, as it brought so much comfort for the user and so much recurring revenue for the companies providing these solutions.
+Everything was possible for which vendors were offering solutions for.
+During this time, a Vendor-Lock-In was something both suppliers and customers were happy with, as it brought so much comfort for the user and so much recurring revenue for the companies providing these solutions.
 
 This all changed at the end of the 90s.
-First, certain initiatives no longer wanted to accept this. Groups of like-minded people joined forces to change this.
-During this time, early versions of Linux were created, stuff like new webservers (Apache Webserver). Also notable was the Samba project, which aimed to open Windows networks to Unix and Linux operating systems.
+First, certain initiatives no longer wanted to accept this.
+Groups of like-minded people joined forces to change this.
+During this time, early versions of Linux were created, stuff like new webservers (Apache Webserver).
+Also notable was the Samba project, which aimed to open Windows networks to Unix and Linux operating systems.
 These people called their way of collaborating: Open-Source (OS).
 
 At that time the OS was usually written in C and C++.
 This probably slowed OS development in its first years as many people were not able or willing to dig into these usually quite complex projects.
 Around this time however, a new programming language entered the arena: Java.
-Also based on Open-Source, the first pure-java build systems were implemented. These lowered the bar for building software greatly.
+Also based on Open-Source, the first pure-java build systems were implemented.
+These lowered the bar for building software greatly.
 Over time, Java became the dominant programming language.
 The OSes grew and the philosophy found more and more supporters.
 
 This is about when the paths of IT and OT split.
 
 While the commercial software vendors had no interest in changing a working solution, the OS world  had many competing solutions and so the problem evolved.
-Not all solutions were successful or generally accepted. But, sometimes even the dominating solution was replaced by a upcoming one, in a very short period of time.
+Not all solutions were successful or generally accepted.
+But, sometimes even the dominating solution was replaced by a upcoming one, in a very short period of time.
 What might have seemed like a waste of resources to outsiders, actually was one of the OSes biggest strengths: Many people trying new stuff, early in the development cycle.
 Good ideas survived, bad ones were abandoned.
 Projects that were able to adopt good ideas from other projects, grew.
@@ -37,6 +41,7 @@ Their motivation, was typically just curiosity or the simple fact that nobody el
 This way of thinking created a huge burst in innovations.
 
 From the OT perspective the problem was, that it couldn't and wouldn't deal with the dynamic evolution.
+# TODO: "Is OSes with this slow innovation rate" sounds odd...
 In a market where cycles are planned in timeframes of years, OSes with this slow innovation rate were just not tenable.
 Up until this time, companies never had issues with buying the solutions of the established vendors and nobody wanted to risk change.
 
@@ -51,73 +56,77 @@ While in the 90s projects were managed using the Waterfall-Modell or RUP, in the
 Another market that also saw growth with the increased adoption of open-source: Consulting.
 It was easily manageable to train employees in the established tools and concepts of the 90s, it was now generally not possible in the 2010s.
 In order to address this problem, consultants were hired as travelling knowledge leaders to bring new skills into the company.
-If a company wanted to adopt a new technology, it was usually cheaper to hire consultants that specialized in these (new) topics, profiting from the knowlege knowledge transfer that usually was included as part of such a consulting contract.
+If a company wanted to adopt a new technology, it was usually cheaper to hire consultants that specialized in these (new) topics, profiting from the knowledge transfer that usually was included as part of such a consulting contract.
 
 As everywhere, large corporations usually don't work with individuals, many consultants work for larger consulting companies.
 In parallel a number of companies evolved that were specialized on providing freelancers to the work effort.
 
-Oftentimes OS projects grew in popularity, as commercial companies evolved around them.
+Oftentimes, OS projects grew in popularity, as commercial companies evolved around them.
 These companies usually provided services such as: Consulting, training and support.
 Some developed commercial extensions to OS projects, which provided the features that large corporations typically needed.
 Some even offered to run the software for their customers as Software as a service (Saas).
 
 A lot has changed in the IT world, but little has changed in the OT world.
 Some vendors updated the operating systems, but significant innovations, like in the IT world, didn't happen.
-Therefore, only few experts in the OT world paid attention to the changes in the IT world.
+Therefore, only a few experts in the OT world paid attention to the changes in the IT world.
 
-Especially some time around 2017 this now greatly backfires on the entire industry.
+Some time around 2017 this trend now greatly backfired on the entire industry.
 
-In this time new concepts, usually aggregated with the topic "Industry 4.0" and Smart Factory, started to feed the interest of the industry.
-The established OT vendors quickly realized what a huge market this could be and fueled the fire with gigantic marketing budgets.
+During this time new concepts, usually aggregated with the topic "Industry 4.0" and "Smart Factory", began to generate new interest across the industry.
+The established OT vendors quickly realized a huge, untapped market and fueled the fire with gigantic marketing budgets.
 Not a single one of the big OT vendors is currently not offering its own proprietary Industry 4.0 platform.
 
-However, if you have a deeper look at the topics aggregated with the term "Industry 4.0", the IT experts will probably realize quickly, that for all of these problems there are many OS solutions available already.
-What many might also not be aware of: Most of the commercial solutions sold by the OT vendors usually contain a lot of OS under the hood.
+However, if you have a deeper look at the topics aggregated with the term "Industry 4.0", the IT experts will probably realize, that for all of these, there are many OS solutions available already.
+What many might not be aware of: Most of the commercial solutions sold by the OT vendors usually contain a lot of OS under the hood.
 
-The only part OS was missing good solutions, was for universal data-exchange with industrial hardware and equipment.
+The part OS was missing (to be a good solution), was universal data-exchange with industrial hardware and equipment.
 The industry-solution to this problem was a new protocol called: OPC-UA.
 Parallel to this, a well established protocol from the IT-world found its way into the OT-world: MQTT.
-However, both solutions require retrofitting existing equipment, which usually is expensive and due to current supply chain difficulties even might not be possible.
+(Actually MQTT initially originated from the OT world, was adopted by the IT and is now coming back to the OT)
+However, both solutions require retrofitting existing equipment, which usually is expensive, and due to current supply chain difficulties, might be impossible to accomplish.
 
-As there was no OS solution in this sector, I initiated the Apache PLC4X project in 2017.
-The goal of this project is simplifying the communication with industrial equipment by directly using the protocols existing devices already supported but hiding their complexity.
-With Apache PLC4X it is now possible to build solutions for all Industry 4.0 use-cases using 100% OS without requiring a retrofit of exising systems.
+Because there were no existing OS solutions in this sector, I initiated the Apache PLC4X project, in 2017.
+The goal of the project, to simplify communication with industrial equipment, by directly using the protocols pre-existent in the devices, but hiding the complexity of using them.
+With Apache PLC4X, it became possible to build solutions for all Industry 4.0 use-cases using 100% OS, without having to retrofit exising systems.
 
 == What is open-source (OS)?
 
-In the years from 2017-2018 I visited a large number of companies in the automation sector.
-I tried to seed the idea of using OS to solve their problems.
+In the years 2017-2018, I visited a large number of companies across the automation sector.
+I tried to seed an idea that OS can be used to solve their problems.
 Most of them didn't understand the concept.
-For most of them I was investing my time to provide them with free software.
-Free like in free beer.
+They just thought I was investing my time to provide them with "free" software.
+Free as in beer (not libre).
 
-However, they never realized that even if the OS software generally is free, using OS usually always comes with a cost.
+However, they never realized that even though the OS software's is free (generally speaking), OS usage always comes with a cost.
 
-One of the reasons is: Yes you can use the software for free, but you can't demand support for free.
-Another reason is: OS is generally never finished software, but usually building blocks for building software.
-You typically can't just download, install and use OS software to solve your problems.
-So even if a company doesn't require commercial support, the company has to invest time and/or money.
+One of the reason: Yes, you may use this software for free, but you can't demand free support.
+Another reason: OS software is not a 'finished' product.
+Think building blocks (technology) for building other software.
+You can't just download, install and use OS software to solve your problems.
+So, even if a company doesn't require commercial support, the company has to invest time and/or money in other ways, to put the finishing touches on the solution.
 
-In contrast to the proprietary commercial solutions, in this case the company is free to decide how to invest: Does the company want to invest by giving their employees the time to work on it or does it pay consultants to help?
-Some even use hybrid models in which the own employees work on a solution together with external consultants.
-For me, this is generally the best option: It supports the people working on creating OS and allows building up expertise inside the company.
+This in contrast to the existing proprietary commercial solutions.
+The company is free to decide how to invest: Do they want to invest by allowing their employees time to work on it, or does it just pay outside consultants to help?
+Some even use hybrid models where their employees work on a solution together with external consultants.
+For me, this is generally the best of both worlds: It supports the people that build OS technologies while allowing a build up of internal expertise as well.
 
 Also can OS be considered a form of cooperation, even between competitors.
-Here competitors can work on something all need, but which are not essential parts of their core business.
+Here competitors can work on features of OS (together) that are not necessarily essential parts of their core business.
 
-As an example I might spotlight the community behind Apache PLC4X: Here people from multiple companies are working together on implementing communication drivers for industrial protocols.
-Some companies our community members are working for, definitely are competitors, however none of these want to make a living out of selling drivers but all need working solutions for communicating with industrial equipment.
-Wy working on PLC4X together, each company invests work-time of their employees, but all get out the full product.
+As an example, I might spotlight the community behind Apache PLC4X where multiple companies are working together on implementing communication drivers for industrial protocols.
+Some of these companies our community members are working for are definitely competitors, however none want to make a living out of selling drivers but all nonetheless need working solutions for communicating with industrial equipment.
+By working on PLC4X together, each company invests work-time of their employees, but all gain usage (and understanding) of the full product.
+The time invested in total however is only a fraction of that, which would have been required to implement everything on their own.
 
 Another example would be the OSADL (Open Source Automation Development Lab eG).
 Here a larger number of companies have joined forces for creating a certified real-time Linux for their products.
 
-One of the biggest advantages of OS-development is, that this way companies can free themselves from relying on another company.
-If the vendor providing a product another company relies on, gives up on this product, there generally is nothing the company can do about this.
+One of the biggest advantages of OS-development is that companies can free themselves from relying on another specific company.
+If the vendor providing a product another company relies on, gives up on the product, there is generally nothing that can be done about this.
 With OS the company could continue to apply fixes or add new features, or they could hire people to do it for them.
 
-Another thing I really like with OS, is that companies can try out new ideas.
-Here first steps can be done with the pure OS version and switch to commercial offerings step by step as needed.
+Another thing I really like about OS, is that companies can try out new ideas.
+Here first steps can be done with the pure OS version without causing any license-costs and switch to commercial offerings step by step as needed.
 
 Commercial offerings usually are:
 
@@ -129,37 +138,39 @@ Commercial offerings usually are:
 
 Active participation in OS communities also allows companies to influence the future of the products they rely on.
 
-Yet another reason that definitely plays out in favor of OS is that for proprietary solutions, usually a company has to rely on the employees of the vendor itself, with OS the company is able to choose form a huge pool of experienced consultants from many companies.
+Yet another reason that definitely plays out in favor of OS is that for proprietary solutions, usually a company has to rely on the employees of the vendor itself.
+With OS, the company is able to choose from a huge pool of experienced consultants across a broader spectrum of companies.
 
-The people from this pool of highly skilled experts usually also pay a lot of attention to an open adoption of OS and its concepts.
-So active participation on open-source definitely pays out on the recruiting side.
+The people from this pool of highly skilled experts usually pay a lot of attention to adoption of OS and its concepts.
+Active participation on open-source definitely pays out on the recruiting side as employees typically want to work on OS solutions as it broadens the relevance of their skills.
 
 In a study that the OpenForum Europe and Fraunhofer ISI did [1], the results showed that every euro invested in OS pays out four-times.
 
 == So what's the problem?
 
-If it hasn't happened yet, the industry should realize quickly that Industry 4.0 is more an IT topic as it is an OT topic.
+If it hasn't happened yet, the industry should realize quickly that Industry 4.0 is more an IT topic than an OT topic.
 
-Therefore, the typical automation companies are probably not directly have the necessary know-how to provide solutions.
-Most of them have realized this too.
-Starting 2017 they all have started to pull know-how into the company.
-Usually this happened by buying up companies with know-how and with pretty aggressive recruiting.
+Therefore, the typical automation companies probably don't have the necessary know-how to provide solutions.
+A realization not lost of most of them.
+Starting in 2017 they have all started to pull know-how into their respective organizations.
+Usually this happens via acquisitions and aggressive recruiting of talent.
 
-The problem is: We already had shortages of experienced IT personal before the OT industry realized IT is the new holy grail.
-No company will be able to hire enough highly skilled people to cover all bases needed.
+The problem being we already had shortages of experienced IT personal before the OT industry realized IT is the new holy grail.
+No one company will be able to hire enough highly skilled people to cover all the necessary bases.
 Collaboration is inevitable.
-Know-How-Transfer is generally the only thinkable option and OS is the perfect model of collaboration for this.
+Knowlege transfer is generally the only viable option and OS is the perfect model of collaboration in order to accomplish this.
 
-The OT industry is used to thinking in products, but it is growing more and more important to start thinking in services.
+The OT industry is accustomed to thinking in terms of products, but it's growing more and more important to start thinking in terms of services.
 
-With the typical complexity of Industry 4.0 projects, using the waterfall modell or RUP for managing these, is guaranteed to fail.
-The only option here is to adopt agile methods.
+With the typical complexity of Industry 4.0 projects, using the waterfall modell or RUP to manage is guaranteed to result in failure.
+The only option here is to adopt agile methodologies.
 
-Yet another problem is, that most industrial equipment was developed to communicated using a highly secured network.
+Yet another problem, most industrial equipment was developed to communicate using a highly secured networks.
+Statements like: "Our network is secure", I have encountered more often, than I can count them.
 As a result of this, most modern industrial equipment is almost unprotected against malicious access.
-Simply connecting these networks with the company network or even the internet would usually be fatal.
+Simply connecting these networks to the company network, or even the internet, usually results in failure.
 
-However, as an IT consultant it currently is almost impossible to grab hold in the OT industry.
+Despite the fact that the OT world is desperately in need of support from the IT world, as an IT consultant it currently is almost impossible to acquire any contracts from there.
 
 On the one side large corporations are with their unflexible structures and procedures are seldom interesting employers for OS enthusiasts.
 Beyond that, many of these are highly specialized experts, a single company usually doesn't provide enough room for these to be happy over a prolonged period of time.
