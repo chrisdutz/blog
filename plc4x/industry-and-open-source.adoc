@@ -11,57 +11,57 @@ But in general this was a time in which many suppliers of proprietary software e
 
 These companies also were driving innovation.
 Everything was possible for which these vendors were offering solutions for.
-During this time, a Vendor-Lock-In was something both suppliers and customers were both happy with, as it brought so much comfort for the user and so much reoccurring revenue for the companies providing these solutions.
+During this time, a Vendor-Lock-In was something both suppliers and customers were both happy with, as it brought so much comfort for the user and so much recurring revenue for the companies providing these solutions.
 
-This changed at the end of the 90s.
-First initiatives no longer wanted to accept this. Groups of like-minded people joined forces to change this.
-During this time first versions of Linux were created, new webservers like the Apache Webserver, the Samba project, which aimed at opening Windows networks for Unix and Linux operating systems, were brought to life.
+This all changed at the end of the 90s.
+First, certain initiatives no longer wanted to accept this. Groups of like-minded people joined forces to change this.
+During this time, early versions of Linux were created, stuff like new webservers (Apache Webserver). Also notable was the Samba project, which aimed to open Windows networks to Unix and Linux operating systems.
 These people called their way of collaborating: Open-Source (OS).
 
-At that time OS was usually written in C and C++.
-This probably slowed OS in its first years as many people were not able or willing to dig into these usually quite complex projects.
-Pretty much at this time however, a new programming language entered the arena: Java.
-Based on Open-Source also the first pure-java build systems were implemented, which lowered the bar for building software greatly.
+At that time the OS was usually written in C and C++.
+This probably slowed OS development in its first years as many people were not able or willing to dig into these usually quite complex projects.
+Around this time however, a new programming language entered the arena: Java.
+Also based on Open-Source, the first pure-java build systems were implemented. These lowered the bar for building software greatly.
 Over time, Java became the dominant programming language.
-OS grew and the philosophy found more and more supporters.
+The OSes grew and the philosophy found more and more supporters.
 
-Pretty much during this time, the paths of IT and OT split.
+This is about when the paths of IT and OT split.
 
-While the commercial software vendors had no interest, changing a working solution, in the OS world usually many competing solutions to a problem evolved.
-Not all solutions were successful and generally accepted, but sometimes even the dominating solution was replaced by a new competing one in a very short period of time.
-What one might seem like a waste of resources for outsiders, actually is one of OSes biggest strengths: Many people try out something new.
-Good ideas survive, bad ones are abandoned.
-Projects adopt good ideas from other projects and hereby grow.
-Separated from commercial interest, developers just try out new ideas.
-Their motivation, typically just curiosity or the simple fact that nobody else tried it before.
-This way of thinking has created a huge burst in innovations.
+While the commercial software vendors had no interest in changing a working solution, the OS world  had many competing solutions and so the problem evolved.
+Not all solutions were successful or generally accepted. But, sometimes even the dominating solution was replaced by a upcoming one, in a very short period of time.
+What might have seemed like a waste of resources to outsiders, actually was one of the OSes biggest strengths: Many people trying new stuff, early in the development cycle.
+Good ideas survived, bad ones were abandoned.
+Projects that were able to adopt good ideas from other projects, grew.
+Separated from the commercial interests, developers just tried out the new ideas that were flooding in.
+Their motivation, was typically just curiosity or the simple fact that nobody else ever tried it before.
+This way of thinking created a huge burst in innovations.
 
-From the OT perspective the problem was, that it couldn't and didn't want to deal with this dynamic evolution.
-In a market, where cycles are planned in timeframes of years, OS with its innovation speed was just not manageable.
-Till then companies have never had any issues with buying the solutions of the established vendors and nobody wanted to risk anything.
+From the OT perspective the problem was, that it couldn't and wouldn't deal with the dynamic evolution.
+In a market where cycles are planned in timeframes of years, OSes with this slow innovation rate were just not tenable.
+Up until this time, companies never had issues with buying the solutions of the established vendors and nobody wanted to risk change.
 
-In the early 2000s (2000-2010) companies like Amazon or Google didn't want to waste the compute-power they had sitting in their data-centers for peak-loads and first cloud-offerings appeared.
+In the early 2000s (2000-2010) companies like Amazon or Google didn't want to waste the compute-power they had sitting in their data-centers for peak-loads and this is about when the first cloud-offerings started appearing.
 This concept brought completely new concepts to life: BigData, Microservices and Containers were direct results of this development.
-These distributed systems being more complex to run and maintain created a new concept of "Software as a Service".
-While in the 90s there was only the option to buy and run a piece of software, you could now simply rent it and have someone else deal with the tricky parts.
+These distributed systems, now being more complex to run and maintain, created a new concept of "Software as a Service".
+While in the 90s there was only the option to buy and run a piece of software, now you could simply rent it and have someone else deal with the tricky parts.
 
 Established project management strategies could no longer cope with the dynamics modern IT had to deal with.
-While in the 90s projects werde managed using the Waterfall-Modell or RUP, in the 2010s more and more agile methods were used.
+While in the 90s projects were managed using the Waterfall-Modell or RUP, in the 2010s more and more agile methods started being used.
 
-Another market grew way more than the others since the increased adoption of open-source: Consulting.
-While in the past it was easily manageable to train their employees in the established tools and concepts in the 90s, this was generally no longer possible in the 2010s.
+Another market that also saw growth with the increased adoption of open-source: Consulting.
+It was easily manageable to train employees in the established tools and concepts of the 90s, it was now generally not possible in the 2010s.
 In order to address this problem, consultants were hired as travelling knowledge leaders to bring new skills into the company.
-If a company wants to adopt a new technology, it was usually way cheaper to hire consultants specialized in these topics and to profit from the know-howe transfer that usually is part of such a consulting contract.
+If a company wanted to adopt a new technology, it was usually cheaper to hire consultants that specialized in these (new) topics, profiting from the knowlege knowledge transfer that usually was included as part of such a consulting contract.
 
-As everywhere, large corporations usually down't work with individuals, many consultants work for larger consulting companies.
-In parallel also a number of companies evolved that are specialized on providing freelancers.
+As everywhere, large corporations usually don't work with individuals, many consultants work for larger consulting companies.
+In parallel a number of companies evolved that were specialized on providing freelancers to the work effort.
 
-Sometimes an OS project even becomes so popular, that commercial companies evolve around them.
-These companies usually provide services such as: Consulting, training, support.
-Some develop commercial extensions to OS projects, which provide features large corporations typically need.
-Some even offer to run the software for their customers as Software as a service (Saas).
+Oftentimes OS projects grew in popularity, as commercial companies evolved around them.
+These companies usually provided services such as: Consulting, training and support.
+Some developed commercial extensions to OS projects, which provided the features that large corporations typically needed.
+Some even offered to run the software for their customers as Software as a service (Saas).
 
-A lot has changed in the IT world, however only little has changed in the OT world.
+A lot has changed in the IT world, but little has changed in the OT world.
 Some vendors updated the operating systems, but significant innovations, like in the IT world, didn't happen.
 Therefore, only few experts in the OT world paid attention to the changes in the IT world.
 
