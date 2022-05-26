@@ -172,53 +172,53 @@ Simply connecting these networks to the company network, or even the internet, u
 
 Despite the fact that the OT world is desperately in need of support from the IT world, as an IT consultant it currently is almost impossible to acquire any contracts from there.
 
-On the one side large corporations are with their unflexible structures and procedures are seldom interesting employers for OS enthusiasts.
-Beyond that, many of these are highly specialized experts, a single company usually doesn't provide enough room for these to be happy over a prolonged period of time.
-That's generally the reason they chose a position as consultant.
+On the one side, large corporations, having inflexible structures and procedures, are seldom interesting employers for OS enthusiasts.
+Beyond that, because many of these people are highly specialized experts, a single company usually doesn't provide enough room to keep them happy over a prolonged period of time.
+That's generally the reason they chose to be a consultant in the first place.
 
-Unfortunately the purchasing departments of larger companies usually only make business with so-called preferred vendors.
+Unfortunately, the purchasing departments of larger companies usually only do business with so-called preferred vendors.
 These are often also larger companies where contracts have been established to "ease the process of purchasing products or services".
 Mostly, this is mainly about lowering the price as much as possible and less about easing the actual purchase.
 However, this is something the IT world knows just as well.
 
-The big problem with this however is, the OT world has well established preferred vendor relations to suppliers of products, but almost none at all towards purchasing services such as consulting.
-Therefore, the companies the IT consultants work for usually are never listed and anything going beyond a small proof of concept is simply not possible.
+The big problem with this however is, while the OT world typically have well established preferred vendor relations to suppliers of products, they don't maintain relations with firms that do the consulting work.
+Therefore, the companies that IT consultants work for are usually never listed, and anything going beyond a small proof of concept is simply not possible.
 Even if a small number of IT companies managed to break this boundary, typically this happened for well known IT companies, that operate around well established OS projects.
-It will probably take several years for the normal IT consultancies to be listed here.
+It will probably take several more years before normal IT consultancies can be listed here.
 
-To add to the growing list of problems I already mentioned, some really big problems result of the way OT companies work in general.
-(All of these I didn't make up, but was told behind closed doors ... usually at conferences or industrial fair receptions after a few drinks)
+To add to the growing list of problems I already mentioned, some really big problems arise due to the way OT companies work in general.
+I didn't make any of this up, BTW. But, was told about it behind 'closed doors' ... usually at conferences, or industrial fair receptions (after a few drinks).
 
-- In some companies prestige of executives are directly bound to the budget they are able to decide over and not how well they spend what they have. Using OS would directly result in less expenses in license-costs. This would result in a smaller budget and this would directly reduce the prestige of that manager.
-- Pricing in the OT world is an intransparent mess. If you've ever tried finding a price for a given product, this usually is impossible and every price is negotiated. Many employees in the purchasing departments, tie their prestige to the conditions they get from the vendors. Many of these are now afraid, if the company they work for would start buying less of a vendors products, this would result in a cut of special conditions and this would again reduce their prestige and of course could influence the invitation to the next incentive event of that vendor.
-- Last case I've run into was that it is not that uncommon that vendors of industrial products become shareholders of their customers. As shareholders, they have certain options to control which companies these customers do business with.
+- In some companies prestige of executives are directly bound to the budget they are able to decide over and not how well they spend what they have. Using OS would directly result in less expenses in license-costs. This would result in a smaller budget and this would directly reduce the prestige of that manager. (The use it or lose it problem)
+- Pricing in the OT world is an intransparent mess. If you've ever tried finding a price for a given product, it's generally impossible because every price is negotiated. Many employees in the purchasing departments, tie their prestige to the conditions they get from the vendors. Many of whom are now afraid. If the company they work for ever started buying less of a vendors products, it would result in a cut of special conditions which would again result in a loss of prestige that of course would influence invitations to that vendor's next incentive event.
+- The last case I've run into is that it's not uncommon for vendors of industrial products to be shareholders of their customers. As shareholders, they have certain options to control which companies these customers do business with.
 
-Changing all of this is particularly challenging, as, as I mentioned before, for the last 25 years there has been only little exchange between IT and OT.
-Unfortunately, many of the decision-makers in the industry come from the OT-world and therefore deeply rooted with the OT products and vendors.
-Convincing these would require being present at industrial fairs with huge and impressive booths.
-I guess we can all imagine that this is simply impossible for OS, which usually has no marketing budget at all.
-Perhaps over time large consultancies will start to present their services there, but this will take time and till then not much will change.
+Changing all of this is particularly challenging, because, as I mentioned before, over the last 25 years there has been very little exchange between IT and OT.
+Unfortunately, many of the decision-makers across the industry come from the OT-world and therefore are deeply rooted with OT products and vendors.
+Convincing them to change would require courting them at industrial fairs with huge and impressive booths.
+We can all probably imagine that this is simply not possible for OS, given their typically low marketing budgets.
+Perhaps over time large consultancies will begin presenting their services there, but this will take some time, and until then not much will change.
 
-When taking to representatives of the industry probably the most annoying problem, that I always have, are NDAs.
-In the last 6 years I haven't done a single POC for any company where I didn't have to sign an NDA that prevented me from talking about it.
-So whenever I was advocating OS in the industry, I usually always got the question: "So who's using OS and what are they using it for?".
-In this cass I always had to answer: "Way more than you think, however I'm not allowed to talk about it".
+When talking to representatives of the industry, probably the most annoying problem, and one that I always face, are NDAs.
+In the last 6 years I haven't done a single POC for a company where I didn't have to sign an NDA that prevented me from talking about it.
+So, whenever I'm advocating OS in the industry, I usually get the question: "So, who's using OS and what are they using it for?".
+In this case I answer with: "Way more than you think, however I'm not allowed to talk about it".
 That doesn't really help.
 
-So what's can be the result of this?
+So what's the result of this?
 
-For the IT and OS expert there are generally two options:
+The IT and OS expert generally have two options:
 
 1. The consultant changes its focus and turns towards longer running projects in other customer-areas
-2. The freelancer accepts a full-time-employment offer
+2. He accepts a full-time-employment offer from one of the bigger companies
 
-In both cases the expert is no longer available for the industry.
+In both cases the expert is no longer available for the industry in general.
 
 Considering the option of companies from the OT world trying to hire people from the IT and OS world, I've noticed that (at least in Germany) companies are offering unreasonably low salaries.
-When questioning them about that, I usually heard that higher salaries wouldn't fit into the company's salary structure.
+When questioning them about it, I'm usually told that higher salaries wouldn't fit into the company's salary structure.
 
-One thing the companies should realise, is that the rest of the world is used to IT salaries and are happily willing to pay them.
-Why should a highly qualified expert voluntarily pass on a much higher salary, just because the OT-world is not used to them yet?
+One thing the companies should realise, is that the rest of the world is used to IT salaries and will happily pay them.
+Why should a highly qualified expert voluntarily pass on a much higher salary, just because the OT-world has not grown accustomed to the higher payscale?
 Beyond the reduced payment here (again ... generally in Germany ... I don't know if this applies to other areas of the world), these OT companies also don't provide typical benefits like:
 
 - Remote work
@@ -226,15 +226,15 @@ Beyond the reduced payment here (again ... generally in Germany ... I don't know
 - Encouraging technical exchange
 - Free PTO
 
-I really had to grin quite often when I started reading the OT magazines in the last years.
-Here many companies are complaining the shrinking pool of highly skilled experts.
-The bitter reality (for these companies) is that the pool is not shrinking at all.
+I find amusing what can be read in the OT magazines over the last several years.
+Here many companies are complaining about the shrinking pool of highly skilled experts.
+The bitter reality (for them) is that the pool is not shrinking at all.
 It's actually growing.
 People are simply not reacting to their job offers.
-Offering a fruit basket simply doesn't make your company a fresh and hip company that attracts them.
+Offering a fruit basket simply won't make your company a fresh and hip company capable of attracting this level of talent.
 
-Some companies have realized some problems and have founded some nice and flashy digitization hubs.
-Here they are trying to provide an environment that is more tempting for highly skilled IT experts, however these hubs are usually tied into the corporation quite strictly and most of the flexibility ends where the work starts.
+Some companies have grown wise to these problems and have started nice and flashy digitization hubs.
+Here they are trying to provide an environment that is more tempting for highly skilled IT experts, however these hubs are usually tied into their corporation quite strictly and most of the flexibility ends where the work starts.
 
 == Conclusion
 
@@ -244,21 +244,21 @@ Companies that are not able to adjust to change quickly will not survive for lon
 The typical approach of the (German) industry is completely useless for dealing with such dynamic requirements.
 
 In order to be able to compete with the competition, a consequent digitization is the only option.
-Unfortunately you can't buy and install this, like the products the industry is used to.
-The companies are required to accept this and adjust on all levels.
+Unfortunately, this can't be bought and installed, like the typical products the industry has grown used to.
+These companies must accept these new conditions and make adjustments on all levels.
 
-The modern IT world and especially the OS world have solutions for most of the most challenging problems of the industry.
-Beyond that there's an army of highly skilled professionals to help.
+The modern IT world, and especially the OS world, have solutions for most of the challenging problems of the industry.
+Beyond that, there's an army of highly skilled professionals that can help.
 
 However, the industry needs to realize, that in the IT world other rules apply than in the OT world.
-The IT world doesn't have and won't adjust to the OT worlds wishes.
+The IT world doesn't need to and won't adjust to the OT worlds wishes.
 We had full employment in the IT, even before Industry 4.0 was a thing and nothing has changed here.
 
-Especially the German industry desperately needs to move out of it's comfort-zone, or it will develop into a cage.
+The German industry especially suffers from these problems and desperately needs to move out of it's comfort-zone, or it will develop into a cage.
 
-Probably the most prominent example are electrical cars: Here the German industry had the opinion that nobody wants or needs them and therefore no impulses were set in that direction.
-However, all of a sudden new and fresh US companies entered the market and proved them wrong.
-Of course first versions of a Tesla had their problems and couldn't compete with our famous Audi "Spaltmaß" (Something probably only Germans have a word for ... at least there was nothing in English that I could find on Wikipedia [2]).
+Probably the most prominent example are electrical cars: Here for a long time the German industry had the opinion that nobody wants or needs them and therefore no impulses were set in that direction.
+They were proved wrong when the US companies entered into the now burgeoning market.
+Of course first versions of a Tesla had their problems, and couldn't compete with our famous Audi "Spaltmaß" (Something probably only Germans have a word for ... at least there was nothing in English that I could find on Wikipedia [2]).
 
 However, they got better.
 
