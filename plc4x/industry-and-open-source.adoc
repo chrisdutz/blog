@@ -1,5 +1,7 @@
 = A story of Industry and Open-Source
 
+image::help-up-hill.jpg[]
+
 == Once upon a time ...
 
 Or possibly: How IT and OT grew apart in the last 30 years.
