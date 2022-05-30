@@ -1,6 +1,6 @@
 = A story of Industry and Open-Source
 
-image::help-up-hill.jpg[]
+image::help-up-hill.png[]
 
 == Once upon a time ...
 
