@@ -145,7 +145,7 @@ Commercial offerings usually are:
 - Software as a service (Saas)
 - Consulting
 - Training
-- Support (Even with CLAs)
+- Support (Even with SLAs)
 
 Active participation in OS communities also allows companies to influence the future of the products they rely on.
 
