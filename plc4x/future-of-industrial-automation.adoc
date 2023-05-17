@@ -1,0 +1,56 @@
+= The future of industrial automation
+
+In my last blog article I focussed on how industrial automation and IT have grown apart over the last 20-30 years.
+
+In this article I would like to concentrate on actual things I've seen everywhere I came in the last 5 years (I should point out that I'm explicitly not talking about my position at Rivian, so just imagine wherever I say: "never ever" or "everywhere" that this doesn't apply to that company. Not because it doesn't apply, I'm just not allowed to say anything about that. So for everything I'm writing here, I'm basing this on other experiences I had).
+
+There are many topics, that we are used to in the IT-world, which I was quite surprised to notice, that these are not at all adopted in industrial automation.
+
+== Unit-Testing & Integration-Testing
+
+I guess nobody in the IT world would get a job today, when stating: "I don't believe in testing, I rather spend the time and budget for implementing features". However, in the OT world, this seems to be the most common approach.
+
+Admittedly I have never ever seen any sort of real unit-testing.
+
+Whenever a piece of machinery was purchased (mostly custom-built) there were multiple phases of testing, where the software was simply run on the real patient. Of course if you do this, you should be particularly careful with what you do, as any bug won't throw an exception, it could actually kill someone or destroy equipment.
+
+However, in contrast to the past times, a production-line today is not built and then left unchanged. While 20 years ago giving a product an update or facelift was something planned, prepared and executed over years, we are now talking about months.
+
+There are no safety-measures allowing to test any changes before the factory line is updated, which results in a certain resistance to change anything.
+
+== Scaling of systems
+
+While in the middle of the last century I would im imagine VW produced the Beatle by just building one model, and the only difference might have been the color. Today's products are a lot more customizable. Just have a look at how many options there are when ordering a car. I remember reading once, that VW produces a Golf with the identical configuration every 10000 cars or so (Couldn't find the reference however ... But this blog being on GitHub, I'm open for PRs ;-)).
+
+This however means, that you can't run production where the MES tells the line "Produce a Golf" and the PLCs in the production line start building it. Today for almost every step the PLC needs to ask the MES what it should do or what the parameters for this order are.
+
+This results in the MES systems having to deal with an almost exponential number of requests.
+
+The problem with this is however: Not a single MES system I know or have seen out there in the wild, is not a monolith. I haven't seen a single one that runs in a cluster mode on more than one server. Having an identical single computer system on hot-standby doesn't count.
+
+The problem is, that these systems don't scale. They can't deal with an exponential growth in requests. Sometimes, the system goes into a mode of thrashing, in which the number of sensibly processed requests drops to almost zero. But even before reaching this point, the time each request needs to be processed increases dramatically.
+
+the next problem I see, is that a lot more data is produced with each item. Quite often this data is required to be kept for regulatory reasons. Usually so-called Historians are used for this.
+
+These are usually extremely expensive combinations of hard- and software. I recall in one situation, that the historian for storing data on one production line cost something around 100000€, and we needed to use a pallet truck to move it.
+
+However, just like the MES systems, these systems are built as monoliths as well. They suffer from the same lack of scalability. As soon as you reach the maximum ingestion speed, the only option is to reduce the number of tags been written or decrease the granularity, which however drastically reduces the usefulness.
+
+== The myth of being special
+
+One of the reasons I wanted to leave the classical IT consulting, was that I was fed up with every bank and insurance company thinking they were somewhat special as they did things "differently". Fun fact was, that every bank I came across in my carrier, were all doing the same things the same way for the same reasons.
+
+Same thing I've seen in the manufacturing industry. I always had to sign NDAs and was never allowed to speak about how one company does things. Everything is considered their magic sauce.
+
+The funny thing is: If I had been allowed to speak about other projects, I could have prevented many companies from running into exactly the same pits over and over again.
+
+I think we're wasting a lot of money, energy and resources by not talking about even basic concepts.
+
+== What I would like to do
+
+I strongly believe, that the automation industry is in need of changing the way it's software is being built. They need to move towards distributed architectures based more on the idea and concepts of microservices. Only by doing this, can we achieve the scalability needed for today's requirements.
+
+Retrofitting every bit of machinery with OPC-UA enabled controllers is not going to solve the problems we are facing. OPC-UA usually has a too heavy impact on PLC performance in order to provide the amount of data and the granularity required for things like predictive maintenance etc. That's also one of the reasons I started Apache PLC4X, because when talking to industrial equipment in its native protocols, the performance impact is almost not noticeable. As an example: In one of my POCs we were trying to get 2600 data points out of Siemens S7 PLCs every 2 seconds. While the OPC-UA approach only managed to get 200 data points every 2 seconds, our PLC4X S7 driver did the full 2600 in under 200ms. The main difference however was, that at 200 data points with OPC-UA, the PLC was already running at it's CPU limit, while in our case we still had over 40% of reserves on the device. Reserves, the PLC could use to do its actual job.
+
+I would love to help build systems that go in line with the whole `Unified Namespace` idea. A distributed system, in which we collect time-series data as well as digital-twin information which is more than just the raw values, but enriched with context. On this we are then able to execute jobs and hereby build solutions such as distributed MES system. Systems that are able to cope with the increasing demands on future manufacturing.
+
