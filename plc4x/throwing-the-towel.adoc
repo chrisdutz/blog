@@ -28,12 +28,13 @@ So I've decided to also stop working on Apache PLC4X in my free time.
 Currently, this reduces my involvement in the project to what I have been granted by my current employer, which is 4 hours per week.
 So I'm not giving up completely, just reducing my involvement to an absolute minimum.
 
-If the industry wants anything to happen, you can either do it yourself, find someone who's able and willing to do so for you or hire me via Timecho and pay for development.
+If the industry needs help or wants anything to happen, they can either do it themselves, find someone who's able and willing to do it for them or hire me via Timecho and pay for development or - for smaller things - drop me a donation.
 
-Work on new features or drivers will probably continue, and I've already started doing this in a private closed-source repository.
-I will only donate parts of that after receiving not insignificant donations.
+Work on new features or drivers by me will probably continue.
+However, I'll do this in private closed-source repositories.
+I will only donate parts of that after receiving not insignificant amounts in donations.
 
-So don't expect anything to happen on my side for free anymore.
+*Don't expect anything to happen on my side for free anymore*
 
 == Long Version
 
@@ -187,3 +188,8 @@ There's something big lurking around the corner, that might become an issue soon
 Once the CRA and PLD initiatives are becoming binding legal frameworks in europe and probably also similar initiatives elsewhere, I expect the `house-keeping` in projects such as Apache PLC4X to skyrocket.
 
 If there's nobody willing or able to do that, that's going to create facts a lot quicker than most people will expect.
+
+=== Links
+
+- GitHub Sponsors: https://github.com/sponsors/chrisdutz/
+- BuyMeACoffee: https://buymeacoffee.com/christoferu
