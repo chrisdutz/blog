@@ -32,7 +32,7 @@ If the industry needs help or wants anything to happen, they can either do it th
 
 Work on new features or drivers by me will probably continue.
 However, I'll do this in private closed-source repositories.
-I will only donate parts of that after receiving not insignificant amounts in donations.
+I will only donate parts of that after receiving not insignificant donations from the industry as compensation of my time.
 
 *Don't expect anything to happen on my side for free anymore*
 
@@ -42,17 +42,17 @@ For the last more than 8 years I have been investing all of my time into Apache 
 
 I'm not talking about investing 1-2 hours a week or my work time.
 I was constantly working 60-80 hours per week for the last 8 years.
-20-40 per week I took from my personal private life, cutting short on meeting with friends and spending time with my loved ones or simply relaxing and having a good time.
+20-40 hours per week I took from my personal private life, cutting short on meeting with friends and spending time with my loved ones or simply relaxing and having a good time.
 
 This workload is draining my energy, and I'm more and more feeling the consequences.
 
 === Covid and it's aftermath
 
 PLC4X' community was really healthy after graduation.
-When Covid hit us however many of the contributors grew more and more dormant.
-Some had to fight to keep the lights on in their own businesses, some changed jobs to positions that no longer requires PLC4X.
+When Covid hit us however, many of the contributors grew more and more dormant.
+Some had to fight to keep the lights on in their own businesses, some changed jobs to positions that no longer required PLC4X.
+Also, I could no longer work on PLC4X as part of my job, as budgets were being tightened.
 On the other side, getting new folks on board during that time was super challenging.
-Also, I could no longer work on PLC4X as part of my job as budgets were being tightened.
 
 Right now I would generally count 4-5 of the initial core team still working on the project.
 However, it seems we have lost everyone working on the base house-keeping of the project.
@@ -60,7 +60,9 @@ However, it seems we have lost everyone working on the base house-keeping of the
 An open source project is more than implementing features.
 Bill Doerrfeld writes in his recently published blog-post (https://thenewstack.io/open-source-is-at-a-crossroads/): "People also don’t often realize that community management for open source projects is a full-time job"
 
-There usually is a lot of work in cleaning up, refactoring, streamlining, optimizing, testing, writing reports and probably the most important thing for an Apache project: mentoring and encouraging others to become part of the team. This I see as the probably most important job of them all. Unfortunately also the one that requires the largest investment in time.
+There usually is a lot of work in cleaning up, refactoring, streamlining, optimizing, testing, writing reports and probably the most important thing for an Apache project: mentoring and encouraging others to become part of the team.
+This I see as the probably most important job of them all.
+Unfortunately also the one that requires the largest investment in time.
 
 After announcing that I would stop providing free commercial support for PLC4X, I had focussed on encouraging people to scratch their own itches.
 This usually even took more time than simply fixing it myself.
@@ -76,7 +78,7 @@ This was all work that I have been continuing to do mostly in my free time.
 
 During my time at Mapped, I was able to invest a lot of time into `PLC4Go`, however the house-keeping was to be done in my free time.
 
-The company I worked for after that, I did everything in my free time, despite the 100% different promises I was made by them in order to make me take the job.
+The company I worked for after that, I had to do everything in my free time, despite the completely different promises I was made in order to make me take the job.
 
 At Timecho I now have 4 hours per week (Friday afternoon) to work on PLC4X.
 
@@ -102,7 +104,7 @@ The list of the stuff I was able to achieve before joining Timecho was small:
 
 Since then, quite a number of great things have been added to that list:
 
-- I helped China transition to renewable energy by providing the Apache PLC4X driver needed to communicate with a distributed network of gas turbines, that are distributed throughout the country, prepared to jump in, if there's no wind at night and the hydro-energy is running low because of too little rain.
+- Despite how it might sound: I helped China transition to renewable energy by providing the Apache PLC4X driver needed to communicate with a distributed network of reserve gas turbines, that are distributed throughout the country, prepared to jump in, if there's no wind, the sun isn't shining and the hydro-energy is running low because of too little rain.
 - Help people in hospitals, for which they now are able to collect and process data-steams generated by medical monitoring equipment and spot anomalies a lot more reliably and faster than any human could - Sort of `predictive-maintenance for humans`: Saving lives.
 
 If I try to list up all the good I was able to do in Germany:
@@ -188,6 +190,13 @@ There's something big lurking around the corner, that might become an issue soon
 Once the CRA and PLD initiatives are becoming binding legal frameworks in europe and probably also similar initiatives elsewhere, I expect the `house-keeping` in projects such as Apache PLC4X to skyrocket.
 
 If there's nobody willing or able to do that, that's going to create facts a lot quicker than most people will expect.
+
+Even if public money would definitely be well invested in supporting open-source projects in general. Especially those that don't have any form of commercial backing, as most of these will not have the power to prepare for these legal changes.
+I see no way around significant invests by entities such as the European Union in order to keep the lights on in these projects.
+
+One thing people relying on open-source should generally consider: Using an open-source project in the EU which is hosted at an organisation which is considered an  `open-source steward` will reduce the amount of hoops they need to jump through in order to sell their products significantly, once CRA and PLD are in place.
+
+Using projects that are not maintained by an open-source steward or implementing things themselves will require jumping through the complete list of hoops (That's a hell of a lot of hoops).
 
 === Links
 
