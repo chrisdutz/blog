@@ -13,7 +13,7 @@ I just want to point out that everything I'm going to write here only has an eff
 
 == TL/DR
 
-As I wrote in 2022, in my article https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc[Your free trial of open-source has expired], I have stopped providing fee community support in my free time.
+As I wrote in 2022, in my article https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc[Your free trial of open-source has expired], I have stopped providing free community support in my free time.
 
 In the past I kept on insisting, when taking up a new job, that I am allowed to keep my own business running as a side-business, as I knew, that in order for an open-source project to be successful, there needs to be a place where users can get commercial support.
 
@@ -137,7 +137,7 @@ Especially the Beckhoff ADS protocol seems to be on the wish-list for quite a lo
 
 However, have I decided that I will not do this.
 If I would, I would only do it as a commercial product and in order to do that I would need to register a company here in Germany.
-After I gave up my 24-year-long running business end of 2022, I am definitely not going to register a new company in the pure hope that someone might purchase anything, even if they promised too. I have come to learn that promises in the OT world are worth noting.
+After I gave up my 24-year-long running business end of 2022, I am definitely not going to register a new company in the pure hope that someone might purchase anything, even if they promised too. I have come to learn that promises in the OT world are worth nothing.
 
 Lately, I've simply been completely burning up.
 
