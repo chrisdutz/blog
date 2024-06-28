@@ -15,24 +15,20 @@ I just want to point out that everything I'm going to write here only has an eff
 
 As I wrote in 2022, in my article https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc[Your free trial of open-source has expired], I have stopped providing free community support in my free time.
 
-In the past I kept on insisting, when taking up a new job, that I am allowed to keep my own business running as a side-business, as I knew, that in order for an open-source project to be successful, there needs to be a place where users can get commercial support.
+In the past I kept on insisting that I am allowed to keep my own business running as a side-business, when taking up a new job, as I knew that in order for an open-source project to be successful, there needs to be a place where users can get commercial support.
 
-This changed last year, when I shut down my business. For years there were almost no contracts coming in, and I was in danger of my business being closed by the German tax officials (They don't like companies that run at a deficit for years). However, I continued to work on the house-keeping of Apache PLC4X and trying to keep the community active and encouraging others to scratch their own itches by offering assistance as a mentor.
+This changed last year, when I shut down my business after 24 years. For years there were almost no contracts coming in, and I was in danger of being shut-down by the German tax officials (They don't like companies that run at a deficit for years). However, I continued to work on the house-keeping of Apache PLC4X and trying to keep the community active and encouraging others to scratch their own itches by offering assistance as a mentor.
 
-Despite the promises from my employers to be allowed to work on PLC4X as part of my day-job, after leaving codecentric, never has this promise been kept or the amount of time granted for that was simply not enough to do much.
+Despite the promises from my employers to be allowed to work on PLC4X significantly as part of my day-job, after leaving codecentric, never has this promise been kept or the amount of time granted for that was simply not enough to do much.
 
-I compensated this by doing more in my free time and more and more did I notice that I'm burning up.
+I compensated this by doing these things in my free time and more and more did I notice that I'm burning up.
 
 So I've decided to also stop working on Apache PLC4X in my free time.
 
-Currently, this reduces my involvement in the project to what I have been granted by my current employer, which is 4 hours per week.
+Currently, this reduces my involvement in the project to what I have been granted by my current employer, which is currently 4 hours per week.
 So I'm not giving up completely, just reducing my involvement.
 
 If the industry needs help or wants anything to happen, they can either do it themselves, find someone who's able and willing to do it for them or hire me via Timecho and pay for development or - for smaller things - drop me a donation (See list of links at the end of the article).
-
-Work on new features or drivers by me will probably continue.
-However, I'll do this in private closed-source repositories.
-I will only donate parts of that after receiving not insignificant donations from the industry as compensation of my time.
 
 *Don't expect anything to happen on my side for free anymore*
 
@@ -46,7 +42,7 @@ I was constantly working 60-80 hours per week for the last 8 years.
 
 This workload is draining my energy, and I'm more and more feeling the consequences.
 
-=== Covid and it's aftermath
+== Covid and it's aftermath
 
 PLC4X' community was really healthy after graduation.
 When Covid hit us however, many of the contributors grew more and more dormant.
@@ -54,8 +50,8 @@ Some had to fight to keep the lights on in their own businesses, some changed jo
 Also, I could no longer have continued to work on PLC4X as part of my job, as budgets were being tightened.
 On the other side, getting new folks on board during that time was super challenging.
 
-Right now I would generally count 4-5 of the initial core team still actively working on the project.
-However, it seems we have lost everyone working on the base house-keeping of the project.
+Right now I would generally count 4-5 of the initial core team still actively working on parts of the project.
+However, it seems we have lost everyone else who was working on the base house-keeping of the project.
 
 An open source project is more than implementing features.
 Bill Doerrfeld writes in his recently published blog-post (https://thenewstack.io/open-source-is-at-a-crossroads/): "People also don’t often realize that community management for open source projects is a full-time job"
@@ -73,7 +69,7 @@ Some even closed their issues with snarky: "giving up on this lib using lib X no
 
 Unfortunately this caused quite a wall of issues forming, one I recently decided to squash, fixing 50% of the open issues within 2-3 weeks.
 
-=== Promises
+== Promises
 
 This was all work that I have been continuing to do mostly in my free time.
 
@@ -97,7 +93,7 @@ With GitHub Sponsors, I got in total 150€ in sponsorship from a friend of mine
 The crowdfunding project that I set up with my company didn't even get a single cent of donations.
 My buymeacoffe.com page (https://buymeacoffee.com/christoferu) got exactly one donation from a former colleague of mine from codecentric (thanks for that, by the way ... but admittedly I think I also got myself a beer or two ;-) )
 
-=== Is it worth it?
+== Is it worth it?
 
 I started reflecting on what I managed to achieve so far and if it's worth continuing.
 
@@ -107,7 +103,7 @@ The list of the stuff I was able to achieve before joining Timecho was small:
 
 - In Switzerland there were sensors in the highways all over the country, but there were no drivers to collect that sensor data. Thanks to a little PLC4X driver that I built, now this data is collected and used to steer and guide traffic all over Switzerland.
 
-Since then, quite a number of great things have been added to that list:
+Since I joined Timecho, quite a number of great things have been added to that list:
 
 - I helped China transition to renewable energy by providing the Apache PLC4X driver needed to communicate with a distributed network of backup gas turbines, that are distributed throughout the country, prepared to jump in, if there's no wind, the sun isn't shining and the hydro-energy is running low because of too little rain. Selling the benefits of renewable energy to the population and industry doesn't work well if the lights go out because the renewable energy sources are taking a day off.
 - Help people in hospitals, for which they now are able to collect and process data-steams generated by medical monitoring equipment and spot anomalies a lot more reliably and faster than any human could - Sort of `predictive-maintenance for humans`: Saving lives.
@@ -142,7 +138,7 @@ Especially the Beckhoff ADS protocol seems to be on the wish-list for quite a lo
 
 However, have I decided that I will not do this.
 If I would, I would only do it as a commercial product and in order to do that I would need to register a company here in Germany.
-After I gave up my 24-year-long running business end of 2022, I am definitely not going to register a new company in the pure hope that someone might purchase anything, even if they promised too. I have come to learn that promises in the OT world are worth nothing.
+After I gave up my 24-year-long running business end of 2022, I am definitely not going to register a new company in the pure hope that someone might purchase anything, even if they promised too. I have come to learn that promises in the OT-world are worth nothing.
 
 Lately, I've simply been completely burning up.
 
@@ -151,7 +147,7 @@ The huge pile of work, combined with the lack of reward for doing it, was simply
 It's the type of burning up, where you stay up long as you've developed a sort of hate towards your bed, even if you're almost too tired to stand.
 But after giving up and giving sleep a try, you still wake up 4h later, no matter how tired you are, and you give up on trying to sleep when it's time to start working - almost being thankful that you've now got a reason to stop trying to.
 
-=== My solution
+== My solution
 
 So I have decided and already announced in the project, that end of March 2024 I have stopped working on the project in my free time completely if I'm not compensated for it.
 
@@ -159,7 +155,7 @@ So I have decided and already announced in the project, that end of March 2024 I
 
 I have set up a private repo of my own, where I'm doing work on stuff that I need or simply want to do.
 Right now it contains a completely rewritten version of an Allen Bradley Logix driver that in contrast to the PLC4X-version supports auto-discovery, browsing and reading and writing of user-defined types.
-Also will all work on the UI client for PLC4X, that I already started in that repo.
+Also will all work on the UI client for PLC4X, that I already started be done in that repo.
 
 Things I implement there I do plan on donating to the open-source project, however I will only do that if I receive not insignificant amount of money with donations.
 As I don't run a company I can't sell anything.
@@ -172,7 +168,7 @@ An Apache project usually is not a one-man-show. The project will definitely con
 
 image::commit-activity.jpg[]
 
-=== The Future of Apache PLC4X
+== The Future of Apache PLC4X
 
 Things might change, as me stepping back possibly makes room for people that might have been kept from participating due to my over-proportional involvement.
 If everyone knows I'm covering all the bases, why bother?
@@ -189,7 +185,7 @@ I will continue to invest my free time into open-source. However, just in projec
 
 Even if I have completely lost my faith in open-source in the OT-industry, I still believe in open-source in general.
 
-=== Glimpse into the future
+== Glimpse into the future
 
 There's something big lurking around the corner, that might become an issue soon and which could speed up some things.
 
@@ -197,31 +193,35 @@ Once the CRA and PLD initiatives are becoming binding legal frameworks in europe
 
 If there's nobody willing or able to do that, that's going to create facts a lot quicker than most people will expect.
 
-Even if money would definitely be well invested in supporting open-source projects in general.
-Especially those projects that don't have any form of commercial backing are probably most in need of funding, as they will not have the power to prepare for these legal changes.
-Some rules for some projects will most probably require them to execute external code audits.
-Which group of private people will be willing to invest the significant amounts of their private money in order to pay for something, just to be able to continue giving away something for free?
-I see no way around significant investments by entities relying on open-source but also legal bodies such as the European Union in order to keep the lights on in these projects.
+Even if money would definitely be well invested in supporting open-source projects in general,
+especially those projects that don't have any form of commercial backing are probably most in need of funding.
+Otherwise, these will not have the power to prepare for these changes.
+Some rules for projects considered critical infrastructure - which I have been told PLC4X and all similar projects from the same space possibly will fall under - will most probably require them to execute external code audits in order to be allowed to release software and hereby put them on the market.
 
-One thing people relying on open-source should generally consider: Using an open-source project in the EU which is hosted at an organisation which is considered an  `open-source steward` will reduce the amount of hoops they definitely will need to jump through in order to sell their products significantly once CRA and PLD are in place.
+Which group of private people will be willing to invest the significant amounts of their private money in order to pay for something, just to enable others to continue to be able to use their stuff for free?
+
+I see no way around significant investments by entities relying on open-source but also legal bodies such as the European Union into open-source, in order to keep the lights on.
+
+One thing people relying on open-source should generally consider: Using an open-source project in the EU which is hosted at an organisation which is considered an  `open-source steward` will reduce the amount of hoops they will need to jump through in order to sell their products significantly, once CRA and PLD are in place.
 The ASF is such a place.
 
-Using projects that are not maintained by an open-source steward might become impossible, as these would either need to apply to all rules or using them will become illegal if the company using it doesn't take care of this (That's a hell of a lot of rules).
+Using projects that are not maintained by an open-source steward might become impossible, as these would either need to apply to all rules or using them will become illegal, if the company using it doesn't take care of this (That's a hell of a lot of rules).
 Apache PLC4X is, as far as I know, the only open source project for communication with various types of industrial equipment, which is also hosted by an organization considered an open-source steward.
-The only other project in this sector I know of would be the Eclipse Milo project, as the Eclipse foundation is also considered an open-source steward.
+The only other project in this sector I know of would be the Eclipse Milo project, as the Eclipse foundation is also considered an open-source steward. However, this project only deals with communication in one single protocol.
+
 Having a look at most other open-source projects in that field.
 Most are un-paid single person projects.
 I see no chance of being able to continue to use these in a CRA and PLD regulated world.
+
 NodeRED is going to be interesting, but I am not a lawyer and I can't say what's going to happen there.
 
 Implementing things themselves will require not only involve investing a lot of work, but also jumping through the complete list of hoops.
 
-So in general: Companies relying on open-source should generally consider funding the projects and the foundations where they are planning to continue consuming open-source products.
+So in general: Companies relying on open-source should generally consider funding the projects and the foundations where they are planning to continue consuming open-source products in the future.
 I know the ASF is already preparing itself, and this comes with quite some costs for the foundation.
-I actually just helped approve the budget increases in the last board meeting.
 If these additional costs make the Foundations run at a deficit, these safe harbours might also go away, leaving the commercial a world full of hoop-jumpers.
 
-=== Links
+== Links
 
 - GitHub Sponsors: https://github.com/sponsors/chrisdutz/
 - BuyMeACoffee: https://buymeacoffee.com/christoferu
