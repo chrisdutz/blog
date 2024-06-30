@@ -6,7 +6,7 @@ image::toddy-towel.jpg[]
 
 As I wrote in 2022, in my article https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc[Your free trial of open-source has expired], I have stopped providing free community support in my free time.
 
-I didn't stop to work on features, new drivers, doing the house-keeping and mentoring.
+I didn't stop working on features, new drivers, doing the house-keeping and mentoring.
 
 However, I had to do this in my free time, and I am feeling how it's burning me out.
 So, I've decided to stop working on PLC4X completely in my free time.
@@ -22,7 +22,7 @@ The last time when I posted something about me giving up providing free communit
 In order to become a Top-Level-Project at the Apache Software Foundation, a project has to demonstrate that it's not just a one-man-show and that there is a viable community backing the project. This gives users the assurance that any person in that project can throw the towel and still the project can continue.
 This also is the case for Apache PLC4X.
 
-I just want to point out that everything I'm going to write here only has an effect on me and what I do in my free time. If that will have an effect the project, only time will tell.
+I just want to point out that everything I'm going to write here only has an effect on me and what I do in my free time. If that will have a long-term effect the project, only time will tell.
 
 == Long Version
 
@@ -31,7 +31,7 @@ For the last more than 8 years I have been investing all time I could into Apach
 We're not talking about investing 1-2 hours a week or just some work time.
 I was constantly working 60-80 hours per week.
 
-During my time at codecentric I was able to invest all of my work time, unfortunately the amount of time I could spare for working on PLC4X after leaving varied between no-time and all the time needed to implement features the company needed.
+During my time at codecentric I was able to invest all of my work time, unfortunately the amount of work-time that I could spare for working on PLC4X after leaving varied between no-time at all and all the time needed to implement features the company needed.
 Now I currently get 4 hours per week.
 Everything beyond that (20-40 hours per week), I took from my private life, cutting short on meeting with friends and spending time with my loved ones or simply relaxing and having a good time.
 
@@ -39,7 +39,7 @@ This workload has been draining my energy, and I'm more and more feeling the con
 
 == Covid and it's aftermath
 
-PLC4X' community was really healthy after graduation.
+PLC4X' community was really healthy after graduation in 2019.
 There were many people working on the various parts of the project.
 For any part of the project were always multiple people able and willing to take on anything.
 
