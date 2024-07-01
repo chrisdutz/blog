@@ -143,15 +143,6 @@ These are just some examples that I could publicly find, and I've seen even more
 
 image::open-source-commic.webp[]
 
-People using the Inductive-Automation MES system `Ignition` have been begging me to create an Ignition adapter for PLC4X in their forums, as we support many of the protocols that people there are missing.
-
-Especially the Beckhoff ADS protocol seems to be on the wish-list for quite a long time.
-
-However, I have decided that I will not do this.
-If I would, I would only do it as a commercial product and in order to do that I would need to register a company here in Germany.
-After I gave up my 24-year-long running business end of 2022, I am definitely not going to register a new company in the pure hope that someone might purchase anything, even if they promised too.
-I have come to learn that promises in the OT-world are worth nothing.
-
 Lately, I've simply been completely burning out.
 The huge pile of work, combined with the lack of reward for doing it, was simply too much for me.
 I used to stay up long and even developed a sort of hate towards my bed, although I was too tired to stand.
@@ -177,9 +168,7 @@ I might continue to address things in the open-source project in my free time in
 Anything beyond my previously mentioned 4 hours per week is now history.
 
 An Apache project usually is not a one-man-show.
-The project will definitely continue, however at a much slower pace (as you can probably see in the following commit statistic screenshot).
-
-image::commit-activity.jpg[]
+The project will definitely continue, however at a much slower pace.
 
 == The Future of Apache PLC4X
 
