@@ -245,7 +245,14 @@ Costs that cause the ASF to spend more money than it currently is raising by spo
 Processes need to be defined or re-defined, new tooling needs to be created, projects need to be trained to follow new processes.
 If these additional costs make the foundations run at a deficit for too long, these safe harbours might also disappear.
 
-== Links
+== Call to action
+
+If you want me to work on anything related to Apache PLC4X, here are two options:
 
 - GitHub Sponsors: https://github.com/sponsors/chrisdutz/
 - BuyMeACoffee: https://buymeacoffee.com/christoferu
+
+Also, your company should really consider also supporting the Apache Software Foundation:
+
+- https://www.apache.org/foundation/sponsorship
+
