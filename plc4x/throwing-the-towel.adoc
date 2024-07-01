@@ -236,9 +236,10 @@ I see no chance of being able to continue using these in a CRA and PLD regulated
 
 Generally: Companies relying on open-source should consider funding both the projects and the foundations of whom they plan consuming open-source products from, now and in the future, or they will have to do all the work themselves. This will come at costs that are a lot higher than simply supporting existing projects. However, this has to happen now and not once it's too late. Once they have given up, they won't be coming back.
 
-I know the ASF is already preparing itself and it's projects, and this comes with quite some costs for the foundation.
+I know the ASF is already preparing itself and it's projects and so will the others.
+This comes with quite some costs for all of them.
 Processes need to be defined or re-defined, new tooling needs to be created, projects need to be trained to follow new processes.
-If these additional costs make foundations run at a deficit for too long, these safe harbours might also disappear.
+If these additional costs make the foundations run at a deficit for too long, these safe harbours might also disappear.
 
 == Call to action
 
