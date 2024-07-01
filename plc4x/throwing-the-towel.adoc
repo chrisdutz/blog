@@ -6,12 +6,12 @@ image::toddy-towel.jpg[]
 
 As I wrote in 2022, in my article https://github.com/chrisdutz/blog/blob/main/plc4x/free-trial-expired.adoc[Your free trial of open-source has expired], I have stopped providing free community support in my free time.
 
-I didn't stop working on features, new drivers, doing the house-keeping and mentoring.
+I didn't stop working on features, new drivers, doing the house-keeping and mentoring possible new contributors.
 
 However, I had to do this in my free time, and I am feeling how it's burning me out.
 So, I've decided to stop working on PLC4X completely in my free time.
 
-My current employer grants be 4 hours per week, and I will continue to work on PLC4X, but just on Friday afternoons.
+My current employer grants be 4 hours per week, and I will use that time to continue working on PLC4X, but this will limit my involvement to Friday afternoons.
 
 If the industry needs help or wants anything to happen, they can either do it themselves, find someone who's able and willing to do it for them or hire me via Timecho and pay for development. For small things you can drop me a donation (See list of links at the end of the article).
 
@@ -31,7 +31,7 @@ For the last more than 8 years I have been investing all time I could into Apach
 We're not talking about investing 1-2 hours a week or just some work time.
 I was constantly working 60-80 hours per week.
 
-During my time at codecentric I was able to invest all of my work time, unfortunately the amount of work-time that I could spare for working on PLC4X after leaving varied between no-time at all and all the time needed to implement features the company needed.
+During my time at codecentric I was able to invest all of my work time. Unfortunately, the amount of work-time that I could invest after leaving varied between no-time at all and all the time needed to implement features the company needed.
 Now I currently get 4 hours per week.
 Everything beyond that (20-40 hours per week), I took from my private life, cutting short on meeting with friends and spending time with my loved ones or simply relaxing and having a good time.
 
@@ -41,10 +41,11 @@ This workload has been draining my energy, and I'm more and more feeling the con
 
 PLC4X' community was really healthy after graduation in 2019.
 There were many people working on the various parts of the project.
-For any part of the project were always multiple people able and willing to take on anything.
+For any part of the project there were always multiple people able and willing to take on anything.
 
 However, when Covid hit us, many of the contributors grew more and more dormant.
-Some had to fight to keep the lights on in their own businesses and simply didn't have any more time or energy to spare, others simply changed jobs to positions that no longer required PLC4X.
+Some had to fight to keep the lights on in their own businesses and simply didn't have any more time or energy to spare.
+Others simply changed jobs to positions that no longer required PLC4X.
 Due to budget cuts, I could no longer continue to work on PLC4X as part of my job at codecentric.
 Getting new folks on board during that time was also super challenging.
 
@@ -80,7 +81,7 @@ During my time at Mapped, I was able to invest a lot of time into PLC4X, especia
 
 Despite the completely different promises made by the company I worked for after that, I had to do everything in my free time.
 At least here, I learned the hard way, that I should never blindly trust someone wanting to hire me.
-I now expect things to be written into the working contract before signing them.
+I now expect things to be written into the working contract before signing it.
 No more "These are just a formalities, and we'll sort them out quickly once you've joined the team".
 
 At Timecho I now have 4 hours per week (Friday afternoon) to work on PLC4X.
@@ -110,7 +111,7 @@ Unfortunately in the automation space, small companies and open-source projects 
 
 The list of the stuff I was able to achieve before joining Timecho was small:
 
-- In Switzerland there were sensors in the highways all over the country, but there were no drivers to collect that sensor data. Thanks to a little PLC4X driver that I built, now this data is collected and used to steer and guide traffic all over Switzerland.
+- In Switzerland there were sensors in the highways all over the country, but there were no communication-drivers to collect that sensor data. Thanks to a little PLC4X driver that I built, now this data is collected and used to steer and guide traffic all over Switzerland.
 
 In the first half year after I joined Timecho, quite a number of great things have been added to that list:
 
@@ -161,14 +162,14 @@ In the early morning I then finally give in and get up to start working again â€
 
 So I have decided and already announced in the project, that end of March 2024 I have stopped working on the project in my free time completely if I'm not compensated for it.
 
-As a direct result of this decision I recently received two donation with an ask for help and I was happy to help.
+As a direct result of this decision I recently received two donation with an ask for help and I was happy to be of assistance.
 I believe this transaction was beneficial for me and them.
 
 I have set up a private repo, where I'm doing work on stuff that I need or simply want to do.
 Right now it contains a completely rewritten version of an Allen Bradley Logix driver, that in contrast to the PLC4X-version supports auto-discovery, browsing and reading and writing of user-defined types.
-Also will all work on the UI client for PLC4X, that I already started be done in that repo.
+Also will all work on the UI client for PLC4X, that I already started, be done in that repo.
 
-I plan on donating these things and more to the open-source project eventually and on my terms.
+I plan on donating these things and more to the open-source project eventually but on my own terms.
 If you're interested in any of these future features sooner than later, you may consider offering a donation.
 I'm happy to change my schedule in exchange for generosity.
 
@@ -185,14 +186,14 @@ image::commit-activity.jpg[]
 Things will probably change.
 
 Perhaps me stepping back gives room for people that might have been kept from participating due to my over-proportional involvement.
-After all, when the bases are covered by someone, and you only had to wait for a fix, why bother investigating yourself?
+After all, when the bases are covered by someone, and you only have to wait for a fix, why bother investigating yourself?
 If that's the case, then things will normalize again.
 
 On the flip-side, if this doesn't happen, there also is a chance that quite the opposite could be the case.
 When there is nobody around to take care of the annoying house-work, and therefore not being able to concentrate on the fun parts, hat could also drive people away.
 
 In the case that community involvement dries up even more, Apache PLC4X could be heading for the Apache Attic.
-This is the place where all Apache projects go, once the community around a project is no longer able or willing to provide the amount of support that's expected of it.
+This is the place where all Apache projects go, once the community surrounding it is no longer able or willing to provide the amount of support that's expected of it.
 
 I will continue to invest my free time into open-source.
 However, just in projects that I believe have a sustainable future or just for fun.
@@ -203,49 +204,53 @@ Even if I have completely lost my faith in open-source in the OT-industry, I sti
 
 There's something big lurking around the corner, that will become an issue soon and which could speed up things.
 
-Once in Europe the CRA (Cyber-Resilliency-Act) and PLD (Product Libability Directive) initiatives are becoming binding legal frameworks and probably also similar initiatives elsewhere, I expect the `house-keeping` in projects such as Apache PLC4X to skyrocket.
-A very long list of rules will apply to how software is to be created and maintained and this list doesn't really make a difference between commercial offerings and open-source projects.
-As soon as a `product with digital elements` (Which software is generally referred to here) is to be `put on the market` (releasing the software), the entity releasing the software is responsible to complying with these rules.
+Once in Europe the CRA (Cyber-Resiliency-Act) and PLD (Product Liability Directive) are becoming binding legal frameworks and probably also similar initiatives elsewhere, I expect the `house-keeping` in projects such as Apache PLC4X to skyrocket.
+A very long list of rules will apply to how software is to be created and maintained and released and this list doesn't really make a difference between commercial offerings and open-source projects.
+As soon as a `product with digital elements` (Which software is generally referred to here) is to be `put on the market` (releasing the software), the entity releasing the software is responsible to complying with these rules. If they don't they will be liable for any damages caused by using their software.
 
-Luckily an initial pushback by commercial and non-commercial entities here in Europe have made the officials define a so-called `open-source steward` as fourth type of player on the field (Next to: "private", "commercial", "governmental"). Foundations such as the Apache Software Foundation as well as the Eclipse Foundation will most probably be treated as such.
+Luckily an initial pushback by commercial and non-commercial entities here in Europe have made the officials define a so-called `open-source steward` as fourth type of player on the field (Next to: "private", "commercial", "governmental").
+The Apache Software Foundation as well as the Eclipse Foundation will most probably be treated as such.
+However, a vast majority of other open-source foundations and especially the tens of thousands of GitHub projects will not.
 
 Projects being released by an `open-source steward` will only be required to comply with about half of all these rules.
-Using software of any vendor that does not have this status will require the full list.
+Using software of any vendor that does not have this status will require implementing the full list.
 
 When it comes to using software, there will most probably be three variants:
 
-- Consuming software that complies with the full list of rules will be ok
-- Consuming software that is released by an open-source steward will require following a number of rules
-- Consuming software that is not fulfilling all the rules that apply to it, will become illegal
+- Consuming software that complies with the full list of rules will be ok (This usually will be the case for commercial offerings)
+- Consuming software that is released by an open-source steward will require following a reduced number of rules
+- Consuming software that is not part of any of the two previous groups, will become illegal
 
-Experts are estimating that this will make commercial software in general become 30% more expensive, as the vendors will be charging their customers for the extra work. Open-source projects however don't have this option.
+So if a customer consumes a product containing software, all rules will have to be applied to that. In case of commercial software being included, the vendor of that software will have done all the work for that part. In case of open-source software provided by an open-source steward, the foundation providing the software will have applied the part of the rules, that apply to it and the company putting it in its product will have had to apply the rest.
+
+Open-source software provided by sources, that are not considered open-source stewards will have to either apply all rules, or be forbidden to release it. I am not 100% sure how this will be enforceable, if an author is located outside the EU, but I would just say, that this is nothing I want to try out. This will make a huge part of existing open-source unavailable to the commercial world - at least within Europe.
+
+Experts are estimating that this will make commercial software in general become 30% more expensive, as the vendors will be charging their customers for the extra work and extra costs. Open-source projects however don't have this option.
 
 Luckily at the ASF we already have a pretty strict set of policies when it comes to releasing software, so we expect the differences for most of our projects to be not that significant. Those parts where changes are needed, we're already working hard on shielding our projects as good as we can, by investing significantly into tooling and infrastructure.
 
-Open-source projects not located at an open-source steward, especially ones without commercial backing will most probably simply stop existing or might start prohibiting the usage of their software in affected countries.
-
 Unfortunately, there will be one group of software, that will most probably still have to comply with a much larger set of rules, even if they are hosted at an open-source seward: Projects that are considered `critical infratstuctue`.
-I was told that Apache PLC4X will most probably be considered as such. Releasing critical infrastructure products, will most definitely require checks such as external code audits etc. (which don't come for free).
+I was told that Apache PLC4X will most probably be considered as such. Releasing critical infrastructure products, will most definitely require checks such as external code audits etc., which don't come for free and are a huge amount of work.
 
 This also brings me back to the topic of this blog post: That PLC4X needs more support by the companies using it.
 
-Without a significant increase in workforce and en even more significant increase in funding, I am pretty sure that nobody currently working on the PLC4X project is willing to continue once CRA and PLD are in place and their rules become requirements.
+Without a significant increase in workforce and en even more significant increase in funding, I am pretty sure that nobody currently working on the PLC4X project is willing to continue, once CRA and PLD are in place and their rules become requirements.
 
-Money would definitely be well invested in supporting open-source projects in general, especially those projects that don't have any form of commercial backing. Without significant invests projects such as PLC4X will most probably simply stop existing.
+Money would definitely be well invested in supporting open-source projects in general, especially those projects that don't have any form of commercial backing. Without significant invests many projects will most probably simply stop existing.
 
 Apache PLC4X is, as far as I know, the only open source project for communication with various types of industrial equipment, which is also hosted by an organization considered an open-source steward.
 To my knowledge, the only other project in this sector is the Eclipse Milo project.
 However, this project only deals with communication in one single protocol (OPC-UA).
 
-Having a look at other open-source projects in this sector, most are run by individuals in their free time.
+Having a look at other open-source projects in this sector, most are run by individuals in their free time and not backed by a real community.
 I see no chance of being able to continue using these in a CRA and PLD regulated world.
 
-Generally: Companies relying on open-source should consider funding both the projects as well as the foundations of whom they plan consuming open-source products from now and in the future, or they will have to do all the work themselves. This will come at costs that are a lot higher than simply supporting existing projects now. However, this has to happen now and not once it's too late. Once they have given up, that's too late.
+Generally: Companies relying on open-source should consider funding both the projects and the foundations of whom they plan consuming open-source products from, now and in the future, or they will have to do all the work themselves. This will come at costs that are a lot higher than simply supporting existing projects. However, this has to happen now and not once it's too late. Once they have given up, they won't be coming back.
 
 I know the ASF is already preparing itself and it's projects, and this comes with quite some costs for the foundation.
-Costs that cause the ASF to spend more money than it currently is raising by sponsorships.
+Costs that cause the ASF to spend more money in the next year(s) than it currently is raising by sponsorships.
 Processes need to be defined or re-defined, new tooling needs to be created, projects need to be trained to follow new processes.
-If these additional costs make the foundations run at a deficit for too long, these safe harbours might also disappear.
+We're currently chewing through our reserves. If these additional costs make the foundations run at a deficit for too long, these safe harbours might also disappear.
 
 == Call to action
 
