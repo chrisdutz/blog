@@ -211,22 +211,23 @@ Projects being released by an `open-source steward` will only be required to com
 Using software of any vendor that does not have this status will require the full list.
 
 When it comes to using software, there will most probably be three variants:
+
 - Consuming software that complies with the full list of rules will be ok
-- Consuming software that is released by an open-source steward will require fulfilling a number of rules on the using side
-- Consuming software that is either not fulfilling all the rules that apply to it, will become illegal
+- Consuming software that is released by an open-source steward will require fulfilling a number of rules
+- Consuming software that is not fulfilling all the rules that apply to it, will become illegal
 
-Experts are estimating that this will make commercial software in general become 30% more expensive, as the vendors will be charging their customers for the extra work.
+Experts are estimating that this will make commercial software in general become 30% more expensive, as the vendors will be charging their customers for the extra work. Open-source projects however don't have this option.
 
-Luckily at the ASF we already have pretty strict policies when it comes to releasing software, so we expect the differences for most projects to be not that significant. Those parts where changes are needed, we're already working hard on shielding our projects, by investing significantly into tooling and infrastructure.
+Luckily at the ASF we already have a pretty strict set of policies when it comes to releasing software, so we expect the differences for most of our projects to be not that significant. Those parts where changes are needed, we're already working hard on shielding our projects as good as we can, by investing significantly into tooling and infrastructure.
 
 Open-source projects not located at an open-source steward, especially ones without commercial backing will most probably simply stop existing or might start prohibiting the usage of their software in affected countries.
 
-However, there will be one group of software, that will most probably still have to comply with a lot more rules, even if they are hosted at an open-source seward: Projects that are considered `critical infratstuctue`.
+Unfortunately, there will be one group of software, that will most probably still have to comply with a lot more rules, even if they are hosted at an open-source seward: Projects that are considered `critical infratstuctue`.
 I was told that Apache PLC4X will most probably be considered as such. Releasing critical infrastructure products, will most definitely require external code audits etc. (which also need to be prepared and paid for).
 
 This also brings me back to the topic of this blog post: That PLC4X needs more support by the companies using it.
 
-Without a significant increase in workforce in PLC4X and en even more significant increase in funding, I am pretty sure that nobody currently working on the project is willing to continue.
+Without a significant increase in workforce and en even more significant increase in funding, I am pretty sure that nobody currently working on the PLC4X project is willing to continue.
 
 Money would definitely be well invested in supporting open-source projects in general, especially those projects that don't have any form of commercial backing. Without significant invests projects such as PLC4X will simply stop existing.
 
@@ -237,7 +238,7 @@ However, this project only deals with communication in one single protocol (OPC-
 Having a look at most other open-source projects in the same field, most are run by individuals in their free time.
 I see no chance of being able to continue using these in a CRA and PLD regulated world.
 
-Generally: Companies relying on open-source should generally consider funding both the projects and the foundations of whom they plan consuming open-source products from now and in the future, or they will have to do all the work themselves, which will come at costs that are a lot higher than simply supporting existing projects. However, this has to happen now and not once it's too late. If the communities and projects have already given up, that's too late, so they need support now.
+Generally: Companies relying on open-source should consider funding both the projects and the foundations of whom they plan consuming open-source products from now and in the future, or they will have to do all the work themselves. This will come at costs that are a lot higher than simply supporting existing projects now. However, this has to happen now and not once it's too late. Once they have given up, that's too late.
 
 I know the ASF is already preparing itself and it's projects, and this comes with quite some costs for the foundation.
 Processes need to be defined or re-defined, new tooling needs to be created, projects need to be trained to follow new processes.
