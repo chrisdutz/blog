@@ -57,6 +57,7 @@ Quite often the gateways are not able to process so many small requests, due to 
 == Exploring Stream-Based JSON Transformation
 
 What is stream processing?
+
 When doing stream processing, usually an input is converted into a stream of events.
 These events are emitted from a source, possibly processed by a number of interceptors, and finally consumed by a sink.
 
@@ -114,8 +115,8 @@ With XSLT, you reload a changed resource and start using it.
 At first, I started implementing a JSON parser, using ANTLR4.
 
 It turned out the default implementation parsed the entire document into an ANTLR internal tree model, which was killing my improvements.
-However, it turned out you can tell ANTLR to not parse and build the tree and then emit the events using the usual Listeners.
-Then overriding the parser itself, I could make it directly emit the SAX events.
+However, you can tell ANTLR to not parse and build the tree and then emit the SAX events using the usual ANTLR Listener interfaces.
+In this mode I had to extend the parser itself and make it directly emit the SAX events.
 Extending my Parser to also implement the XMLReader interface made me able to use that as a SAX source.
 
 This source emits an XML stream that contains all necessary information needed to be able to serialize it back to JSON.
