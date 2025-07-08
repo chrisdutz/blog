@@ -1,51 +1,154 @@
-= Strategies for processing JSON data
+= Scalable JSON Transformation in Industrial IoT: From DOM to Stream Processing
 
 image::images/title.jpeg[]
 
-For now almost 9 years have I been focussing on helping the automation world catch up with the achievements of the IT world.
+== Introduction
 
-Before that I would have considered myself a normal `full stack` developer with a faible for unconventional approaches.
+During my endeavor of bringing IT and OT together, that I have been on in the last 9 years, there is one type of task that I continuously had to deal with.
+Especially in the MQTT world, but also when doing rest-calls to Apache IoTDB or other REST services:
 
-My tech-stack was always quite a bit away from anything one would consider main-stream.
+Sources provide information in the form of JSON documents.
+However, I think never has the source been sending data in the format that the receiving part needed.
+So in the end it is always necessary to transform this data.
+Either on the sending side, on a gateway or on the receiving side.
 
-Admittedly, was and still am a big fan of XML.
-Not because of the notation itself, but because of the ecosystem and the set of super mature technologies around it.
-`XSLT` for transforming XML data, `XPAth` for addressing and selecting data inside XML data, `XML Schema` for defining the structure and validating data.
+While the MQTT use-case usually has many devices sending smaller JSON payloads, database queries quite often send pretty large ones but a lot less frequent.
 
-This is stuff I'm missing quite a bit in the whole JSON, Yaml, Toml, ... world.
-None of these really have well-established solutions for validating and transforming data.
+I have a long history with transforming data.
+I think I started doing that with `Apache Cocoon` in 1999.
+In those days the format of choice was `XML`.
+I'll never forget when Java and with it `Cocoon` got `SAX` (Simple API for XML), which was a way of processing XML in a streaming fashion.
+With SAX-based pipelines, it was possible to transform gigabyte big XML documents with only a few megabytes of RAM.
+The evolution of `XSLT` processors made transforming even huge amounts of data super easy.
 
-Now please don't come with: "but you can use JSONSchema is for validation of JSON documents".
-The JSONSchema is still in `draft` status and if you were used to the expressiveness of XSD schemas, it feels a bit like a kid trying to play with the big boys.
-I also tried playing with the "solutions" for transforming JSON.
-In the end I just threw all of them away.
+I never quite understood that wherever I came across systems for working with JSON data, the full document is usually parsed and kept in memory for being processed.
+We called this method of processing data: `DOM` (Document Object Model).
+And if you did that for anything else than keeping a configuration in memory and a senior software developer saw it, you were usually in for a lecture on good software engineering practices.
 
-Ignoring all of this, one other thing I never quite understood is how data in general is being processed today.
-In the XML-times we called it `DOM processing` (Document Object Model processing), where the document is parsed fully into an object-model (datastructures) in memory and then this is accessed and/or manipulated.
-More than 20 years ago processing large - in number and size - XML documents in the form of DOMs was considered something only juniors do.
+With the emergence of alternate formats, such as `JSON`, `YAML`, `TOML`, ... however, it seems the idea to process data as a stream has been lost.
+Also do none of these really have highly mature ways to validate and transform data compared to what we had in the `XML` world with `XSLT` and `XSD`.
+(Yes, there are some approaches, but compared to XSLT and XSDs, they're pretty much useless)
 
-Stream-processing was the thing the professionals did and XML had `SAX` (Streaming API for XML) for that.
-With SAX one was able to validate and transform gigabytes of XML data with just a few megabytes of RAM.
+I was thinking: "Would it not be possible to transform `JSON` data using the tools I used with `XML`?"
 
-Even if there are some approaches out there for stream processing the newer formats, I never really came across them much.
-Usually a JSON document is parsed into a JsonObject by something like Jackson and used for doing whatever needed to be done.
+Also, did I want to measure if my gut-feeling with respect to transforming JSON data was generally right.
 
-In one of my more recent projects we had to do a lot of cleaning up of JSON documents which we received via MQTT and had to pass the cleaned-up data to the IT systems.
-All of this is done using DOM processing in any of the standard `industrial solutions`.
+It was, and it wasn't ... this is what this article is about.
 
-== An unorthodox approach
+== The Problem with the Traditional DOM Approach
 
-As I always wondered: "What if I was able to process JSON like I was able to process XML?", I decided to give it a try.
+While this is not that much of an issue for full-blown servers, with edge gateways, memory is never inexpensive or plentiful.
+Also, when dealing with thousands of messages, we're putting the garbage collection to quite a bit of work.
+Work requires CPU time, and that's also expensive on the edge.
 
-I implemented a `JsonStreamReader` which is a streaming JSON parser, that consumes a Java `InputStream` and emits `SAX` events and which I could use to apply `XML Schemas` or apply `XSL Transformations` to.
-The second part was a `JsonSteamSerializer` which consumes `SAX` stream and outputs a stream of JSON to an `OutputStream`.
-Theoretically, this approach doesn't require me to hold the entire document in memory, and I could possibly even generate something that is able to transform infinitely large arrays of JSON objects.
+Most systems load JSON documents into a DOM-like structure using libraries such as Jackson.
+Then they manipulate these in memory and finally serialize them back to JSON.
 
-== Benchmarking
+I think that by processing data in the form of DOMs is wasting a lot of resources, resources that could be put to a lot better use.
 
-The results were quite impressive, but to have solid results, I implemented a little benchmark.
+When it comes to really large documents, it even prevents systems from even being able to process them at all.
+But even with thousands of small documents, the CPU is highly consumed with cleaning up memory.
 
-It consists of a generator, which generates a large JSON document, which is generally an array of quite complex objects such as this:
+Just as a real-world example from the automation industry world:
+Here usually hundreds to thousands of devices are present on the shop floor.
+Many of these send data in some intervals.
+In large installations this results in hundreds to thousands of messages being in need of processing every second.
+Quite often the gateways are not able to process so many small requests, due to the overhead of needing to allocate memory and cleaning up afterwards.
+
+== Exploring Stream-Based JSON Transformation
+
+What is stream processing?
+When doing stream processing, usually an input is converted into a stream of events.
+These events are emitted from a source, possibly processed by a number of interceptors, and finally consumed by a sink.
+
+The benefit of stream processing is, that the entire document doesn't need to be kept in memory.
+You can also theoretically transform an indefinitely large document if your source is a continuous stream of data.
+
+Benefits for IIoT:
+Processing data in this way results in a much lower memory footprint, which comes in extremely handy on the shop floor when using edge gateways.
+
+Challenges:
+There are already some solutions in the JSON world, such as `Jackson Streaming` and `JsonIter`.
+However, learning how to build transformations with these has a pretty steep learning curve.
+I personally had to fight a bit with the code till I got my transformations right, and I'm actually used to the fights you usually have when building compilers.
+Also is tracking down errors a lot harder.
+
+This is definitely nothing someone used to low-code solutions will be comfortable with.
+
+== A Different Angle: JSON → SAX → XSLT → JSON
+
+In the past I always loved the power and expressiveness of XSLT.
+I thought: "Why not transform JSON data using XSLTs?"
+
+So I built a `Reader` and a `Writer` that parse `JSON` documents and emit `SAX` events, which allow direct manipulation or usage of `XSD schema validators` and `XSLT processors` and in the end serialize all of this back to `JSON`.
+
+I was pretty surprised at how well this worked, and to get some idea of its performance, I decided to do some benchmarks.
+Not only did I compare it with the normal DOM approach, but also with the JSON streaming options I mentioned in the previous chapter.
+
+But what's the benefit of this approach?
+
+The answer is clear: You can harness the power of existing tools.
+Tools that now have had 25 years to be so mature, I would call them pretty much perfect.
+While you can definitely use `JSONSchema` to validate your input, the expressiveness of the 2020 version still doesn't support concepts such as type inheritance.
+This was particularly something I just recently bothered me.
+Thanks to the lack of such features, generated code also couldn't use type inheritance.
+
+Generally, generating code from JSONSchemas is awful.
+
+However, using XSDs it was a breeze to auto generate even sophisticated model types in many languages.
+Jackson actually having its roots in the XML world, also makes it super easy to consume these SAX streams and construct strongly typed and auto-generated models.
+
+When it comes to transforming data, XSLT is just beautiful.
+I have never come across any other technology that makes transforming data so easy.
+Also, there are loads of well-established tools that help you write, edit, test, and debug XSL transformations.
+
+I would also call the learning curve a lot less steep with XSL.
+
+Another benefit of not having actual code to run: Deploying changes at runtime is a lot simpler.
+With Java code, you usually need to compile the code first and tell the classloader to use a new version of your class.
+This usually gets really messy really quickly, and you're back to fighting classloader issues.
+
+With XSLT, you reload a changed resource and start using it.
+
+== Tooling Implementation
+
+At first, I started implementing a JSON parser, using ANTLR4.
+It turned out the default implementation parsed the entire document into an ANTLR internal tree model, which was killing my improvements.
+However, it turned out you can tell ANTLR to not parse the tree and then emit the events using the usual Listeners.
+Then overriding the parser itself to emit the SAX events and implementing the XMLReader interface to be able to be used as a SAX source, solved that problem for me.
+
+One of the first big surprises for me was that it turned out that manually implementing a JSON parser was actually quite a bit more efficient.
+So in the end that was the option I stuck with.
+
+For implementing the transformation, I tried various approaches:
+
+- Implement the transformation logic in the form of a direct SAX transformer written in Java.
+- Use Apache Xalan as an XSL transformer, as this is a very mature and nicely licensed open-source solution (Apache 2.0) (no Streaming).
+- Use Saxonica Saxon HE (Home Edition) as an open-source solution (no Streaming)
+- Use Saxonica Saxon PE/EE (Professional Edition/Enterprise Edition) as a commercial offering that supports streaming (Also supports Schema validation).
+
+The last part needed was a serializer to serialize the SAX stream back to JSON format.
+
+== Benchmark Setup
+
+To see my solution compete with existing ones, I generally wanted to let it compete with the following set of tools:
+
+- Jackson with DOM tree walking (Transformation as Code)
+- Streaming approaches:
+    - Jackson Streaming with stream processing (Transformation as Code)
+    - JsonIter with stream processing (Transformation as Code)
+- SAX approaches:
+    - Pure SAX stream processing (Transformation as Code)
+    - Apache Xalan (Transformation as XSLT)
+    - Saxonica Saxon HE (Transformation as XSLT)
+    - Saxonica Sacon PE/EE stream processing (Transformation as XSLT)
+
+In general, I wanted to test two things:
+
+- Transforming large JSON documents (hundreds of megabytes)
+- Transforming a lot of smaller JSON documents (few kilobytes)
+
+For all I defined the following JSON object:
 
 ```
 {
@@ -84,280 +187,301 @@ It consists of a generator, which generates a large JSON document, which is gene
 }
 ```
 
-Based on this input, I wanted the transformation to convert the age into a year of birth (I know that this is not really rock-solid, just based on the age).
-A second transformation should add a `country` field to the address, if there is none (defaults to `Germany`).
-A third transformation should convert the `temperature` from a value in Fahrenheit into Celsius.
-Last, not least, the tags should all be converted to uppercase values.
+The transformations that I wanted to do are:
 
-So for the input from above, the expected output would be:
+- Convert the `age` into a `yearOfBirth` (I know it's not rock-solid just based on an age, but it's just an example).
+- Add a `country` which is set to `Germany` to the address.
+- Convert the `temperature` from `Fahrenheit` to `Celsius`.
+- Make all `tags` uppercase.
+
+The output was expected to look something like this:
 
 ```
 {
-  "name": "John Doe",
-  "yearOfBirth": 1995,
-  "isActive": true,
-  "address": {
-    "street": "123 Main St",
-    "city": "Anytown",
-    "zipCode": "12345",
-    "country": "Germany"
+  "name" : "John Doe",
+  "yearOfBirth" : 1995,
+  "isActive" : true,
+  "address" : {
+    "street" : "123 Main St",
+    "city" : "Anytown",
+    "zipCode" : "12345",
+    "country" : "Germany"
   },
-  "phoneNumbers": [
-    "555-1234",
-    "555-5678"
-  ],
-  "roles": [
-    {
-      "name": "admin",
-      "level": 5
-    },
-    {
-      "name": "user",
-      "level": 1
-    }
-  ],
-  "settings": {
-    "notifications": true,
-    "theme": "dark",
-    "temperature": 21.5,
-    "preferences": {
-      "language": "en",
-      "timezone": "UTC"
+  "phoneNumbers" : [ "555-1234", "555-5678" ],
+  "roles" : [ {
+    "name" : "admin",
+    "level" : 5
+  }, {
+    "name" : "user",
+    "level" : 1
+  } ],
+  "settings" : {
+    "notifications" : true,
+    "theme" : "dark",
+    "temperature" : 21.5,
+    "preferences" : {
+      "language" : "en",
+      "timezone" : "UTC"
     }
   },
-  "tags": [
-    "IMPORTANT",
-    "PERSONAL",
-    "WORK"
-  ]
+  "tags" : [ "IMPORTANT", "PERSONAL", "WORK" ]
 }
 ```
 
-I think this input and transformation szenario matches many cases that I have been confronted with on the field.
+I then used this general Idea to construct two test cases.
 
-Then I built various transformation implementations using differing approaches:
+=== Test Case 1: Large Document
 
-- Parsing the document into a DOM using Jackson and manipulating the document by code
-- Using my SAX steam and the transformation itself directly as a SAX component by code
-- Using my SAX steam and using an XSLT with Xalan (the ancient XSLT Processor from Apache)
-- Using my SAX steam and using an XSLT with Saxon HE (My all-time favorite XSLT processor)
-- Using my SAX steam and using an XSLT with Saxon PE/EE (The commercial XSLT processor, which supports true stream processing)
-- Parsing and processing the document using Jackson Streaming implementing the transformation by code
-- Parsing and processing the document using JsonIter implementing the transformation by code
+I then built a tool that generates one JSON file containing an array of 1000000 of such entries.
+This record should simulate something like the result of a DB query or a dump of some dataset.
 
-In these tests, all options are open-source or at least freely available.
-The only exception is `Saxon`.
-The version used in the `Saxon Streaming` scenario is a commercial version of `Saxon`.
-However, the price-tag is really reasonable.
-Only the Professional (PE) or the Enterprise (EE) version support full XSL-Streaming, which my tests confirmed.
+Here I wanted to observe the overall memory consumption and speed with which the transformation could be done.
 
-The results were both pretty surprising as well as exactly as expected.
+=== Test Case 2: High Volume
 
-== The results in `TLDR` form
+The second tool that I created generated 1000000 files in 100 times 100 directories, which simulate 10000 devices each sending 100 records.
+
+The focus of this test was more throughput and seeing how the options performed with respect to GC behaviour.
+
+== Results & Observations
+
+These tests both proved my expectations and surprised me at the same time.
 
 === The expected results
 
 Using the default of parsing the Document into a `JSON DOM` and processing that is horrible when it comes to memory usage.
-As an example here a 819 MB large input document required 9560 MB of RAM.
+As an example here a 819 MB large input document required 8016 MB of RAM.
 
-The best of the `SAX steaming` approaches actually allowed me to process any size of document manually implemented SAX conversion logic using only 8MB of RAM (yes, that's an `M`, not a `G`).
+The best of the `SAX steaming` approaches actually allowed me to process any size off document using a manually implemented SAX conversion logic consuming only 8MB of RAM (yes, that's an `M`, not a `G`).
 Processing-time for this case was pretty much the same as that of the default Jackson approach.
 
 === The unexpected results
 
 Using `Saxon Streaming` also enabled me to convert infinitely large documents while using only 8MB of RAM.
-However, transformation-time was 4.5 times that of the pure SAX approach.
+However, transformation-time was something round one fifth of the pure SAX and Jackson DOM approach.
 
-Using `Jackson Streaming` and `JsonIter` both required very little RAM and processing speed was mindblowingly fast (Something round 3.4 times faster than the pure SAX and the JSON DOM approach).
+Using `Jackson Streaming` and `JsonIter` both required very little RAM and processing speed was mindblowingly fast.
 
-When experimenting with "how little memory can I give the solution", even if Jackson Streaming and JsonIter looked pretty much the same in the IntelliJ `Performance view`, still I got OutOfMemory errors when going below 512MB of ram for JsonIter, while Jackson Streaming allowed me to go down to 8MB of RAM.
+When experimenting with "how little memory can I give the solution", even if `Jackson Streaming` and `JsonIter` looked pretty much the same in the IntelliJ `Performance view`, still I got OutOfMemory errors when going below 512MB of ram for `JsonIter`, while `Jackson Streaming` allowed me to go down to 8MB of RAM.
 
-The memory usage and processing time of using `Saxon HE` or `Apache Xalan` were pretty much the same (However, anyone experienced with XSLT knows that even the open-source version of Saxon outperforms Xalan by far in almost any dimension ... especially when it comes to XSLT3 support).
+Another disappointment I had to find out about `JsonIter` when doing the `High Volume` testcase, was that internally JsonIter sets a private static variable, which makes it impossible to run multiple translations in parallel.
+Actually, I think I even need to reset it before being able to parse again within the same VM after processing one document.
+This disqualifies it for me and is also the reason why there are no test results for the second testcase of `JsonIter`.
 
-Initially, I implemented my parser using Antlr4 and directly integrated the emitting of SAX events into the parser logic.
-However, it turned out that JSON, being such a simple format, that manually implementing a parser was even more efficient.
+The memory usage and processing time of using `Saxon HE` or `Apache Xalan` were pretty much the same in testcase 1.
+However, when running the tests for testcase 2 it turned out that a lot of the core classes of Xalan seem stateful.
+I could not use the actual transformation in parallel using multiple threads.
+This resulted in having to re-create the transformation object for each time, which really blew out Xalan from a CPU usage and execution time perspective.
 
-== The results in longer
+=== Result summary for Test Case 1: Large Document
 
-At first, I simply ran the benchmarks without any memory settings on the JVM using an 819MB JSON document containing an array of 1.000.000 objects as described above.
-At the end I had the JVM output its memory size.
+As mentioned before, I measured how much memory and time was needed to parse one JSON document containing an array with 1000000 objects and transform each of these objects and serialize it back out into a file.
 
 |===
 |Scenario |Time |Memory |OK
 
 |Jackson
-|9.305 ms
-|9.560 MB
-|OK
-
-|Pure SAX
-|10.297 ms
-| 1.032 MB
-|OK
-
-|Xalan XSLT (No Streaming)
-|37.498 ms
-| 4.968 MB
-|OK
-
-|Saxon XSLT (No Streaming)
-|33.993 ms
-| 4.424 MB
-|OK
-
-|Saxon XSLT (Streaming)
-|45.019 ms
-|  *560 MB*
+|7.651 ms
+|8.016 MB
 |OK
 
 |Jackson Streaming
-|*2.872 ms*
+|*3.616 ms*
 |1.032 MB
 |OK
 
 |JsonIter
-|*2.389 ms*
+|*2.429 ms*
 |1.032 MB
 |OK
-|===
-
-=== How big can documents be?
-
-Next, I wanted to see how big the documents can be:
-
-1.639 MB (2.000.000 objects):
-|===
-|Scenario |Time |Memory |Success
-
-|Jackson
-|14.719 ms
-|15.120 MB
-|OK
 
 |Pure SAX
-|20.476 ms
+|10.364 ms
 | 1.032 MB
 |OK
 
 |Xalan XSLT (No Streaming)
-|76.391 ms
-|12.792 MB
+|38.291 ms
+| 5.224 MB
 |OK
 
 |Saxon XSLT (No Streaming)
-|69.156 ms
-|10.256 MB
+|34.290 ms
+| 4.992 MB
 |OK
 
 |Saxon XSLT (Streaming)
-|91.523 ms
-|  *560 MB*
+|47.269 ms
+|  *672 MB*
+|OK
+|===
+
+In my test, I simply output how big the memory of the JVM is after finishing. As you can see in the following charts, the real continuous memory usage is a lot smaller.
+
+Key findings:
+
+- Memory
+    - `Jackson Streaming`, `JsonIter`, `Pure SAX` and `Saxon PE/EE XSLT (Streaming)`, which seem to consume almost no memory at all.
+    - `Xalan` and `Saxon` used considerably more memory.
+    - `Jackson` used most memory.
+- CPU
+    - `Jackson Streaming` and `JsonIter` definitely were super impressive and only required a few seconds.
+    - `Jackson` and `Pure SAX` pretty much came up the same with respect to speed.
+    - The non-streaming XSLT approaches `Xalan` and `Saxon` already needed considerably longer.
+    - `Saxon Streaming` crossed the finishing line last.
+
+I did some more tests with bigger and bigger files and one thing I was able to confirm was that `Jackson` consumed all available memory pretty quickly.
+Also `Xalan` and `Saxon` would run out of memory eventually as I could see a static increase in memory usage the bigger the file was.
+However, as parsing 10.000.000 objects takes a really long time with them, I didn't really reach the point where it was becoming a problem.
+I would assume on a small edge device this would be reached a lot faster than on my M2 Mac.
+
+==== Jackson
+
+image::images/jackson-large.png[]
+
+==== Jackson Streaming
+
+image::images/jackson-streaming-large.png[]
+
+==== JsonIter
+
+image::images/jsoniter-large.png[]
+
+==== Pure SAX
+
+image::images/sax-large.png[]
+
+==== Xalan XSLT (No Streaming)
+
+image::images/xalan-large.png[]
+
+==== Saxon HE XSLT (No Streaming)
+
+image::images/saxon-he-large.png[]
+
+==== Saxon PE/EE XSLT (Streaming)
+
+image::images/saxon-ee-streaming-large.png[]
+
+=== Result summary for Test Case 2: High Volume
+
+The test-data for this test was located in 100 directories, each containing 100 subdirectories and then again containing 100 JSON documents each.
+Each document contained exactly one JSON Object.
+Each document had to be transformed into one output document, which then was stored in a directory structure matching that of the input.
+
+Here the amount of memory being used by all scenarios at any point of time was not causing any issues.
+In this scenario CPU time seems to have been a lot more important.
+
+|===
+|Scenario |Time |Avg. CPU utilization |OK
+
+|Jackson
+|*88.548 ms*
+|42 %
 |OK
 
 |Jackson Streaming
-|*5.557 ms*
-| 1.032 MB
+|91.512 ms
+|42 %
 |OK
 
 |JsonIter
-|*4.569 ms*
-| 1.304 MB
-|OK
-|===
-
-4.099MB MB (5.000.000 objects):
-|===
-|Scenario |Time |Memory |Success
-
-|Jackson
-|-
-|-
-|Failed: Out of heap space.
+|
+|
+|Failed
 
 |Pure SAX
-|52.211 ms
-| 1.032 MB
+|99.564 ms
+|38 %
 |OK
 
 |Xalan XSLT (No Streaming)
-|195.971 ms
-| 16.384 MB
+|617.403 ms
+|82 %
 |OK
 
 |Saxon XSLT (No Streaming)
-|174.726 ms
-| 16.384 MB
+|105.949 ms
+|*10 %*
 |OK
 
 |Saxon XSLT (Streaming)
-|233.733 ms
-|   *560 MB*
-|OK
-
-|Jackson Streaming
-|*14.416 ms*
-|  1.032 MB
-|OK
-
-|JsonIter
-|*11.123 ms*
-|  2.328 MB
+|116.090 ms
+|*10 %*
 |OK
 |===
 
-So I could definitely see a pattern where these following four scenarios seem able to process infinitely large documents:
+As I ran the tests on a 12-core Mac, I ran 12 transformations in parallel.
+This fact made me even realize the huge issues JsonIter had with concurrency.
+I assume file IO was causing the biggest bottleneck in this test.
+Otherwise I couldn't explain why the streaming implementation of Saxon only saturated my system to 10% while doing it's job.
+I should probably run this benchmark again using a RAM drive to reduce the influence of drive speed.
 
-- Pure SAX
-- Saxon XSLT (Streaming)
-- Jackson Streaming
-- JsonIter
+Key findings:
 
-The others will result in out-of-memory errors eventually.
+- Execution time
+    - `Jackson` finished first
+    - In general, it seems the non-XSLT-based approaches were a lot quicker than the XSLT-based ones
+- CPU Usage
+    - It seems the Saxon-based approaches seem to be a lot less CPU intense as the others
 
-=== How little RAM can the transformer live with?
+==== Jackson
 
-In this part of my tests, I used the 1.000.000-entries scenario with its 819MB large input document and kept on decreasing the JVMs `-Xmx` size.
-In the following table I have how far I was able to go down.
+image::images/jackson-many.png[]
 
-|===
-|Scenario |Memory
+==== Jackson Streaming
 
-|Jackson
-|6 GB
+image::images/jackson-streaming-many.png[]
 
-|Pure SAX
-|*8 MB (That's an `M`, not a `G`)*
+==== JsonIter
 
-|Xalan XSLT (No Streaming)
-|3 GB
+Couldn't run the test.
 
-|Saxon XSLT (No Streaming)
-|3 GB
+==== Pure SAX
 
-|Saxon XSLT (Streaming)
-|*16 MB*
+image::images/sax-many.png[]
 
-|Jackson Streaming
-|*8 MB*
+==== Xalan XSLT (No Streaming)
 
-|JsonIter
-|512 MB
-|===
+image::images/xalan-many.png[]
 
-So it seems that the `Pure SAX`, `Saxon XSLT (Streaming)` and `Jackson Streaming` seem to be the options that really can live with almost no ram at all.
-For some reason `JsonIter` seems to require at least 512 MB, even if I can't see that memory being used in my profiler.
+NOTE: Execution time was longer than the output fit in the box.
 
-== Summary
+==== Saxon HE XSLT (No Streaming)
 
-When it comes to transforming JSON data, especially on edge gateways, the usual approach of parsing the document in memory and manipulating this there is the least efficient of all approaches.
-Surprisingly (for me) the `Jackson Streaming` seems to be the winner as it is the by far most efficient option with respect to speed and memory usage.
+image::images/saxon-he-many.png[]
 
-I generally would have listed `JsonIter` as a second first place, but its inability to live with less than 512MB of RAM, made `Jackson Streaming` have its nose a touch in front of it.
+==== Saxon PE/EE XSLT (Streaming)
 
-The `Pure SAX` definitely turned out to live with the least amount of RAM (I was actually able to start and run the VM with only 4MB. However, in the end it still reported 8MB. The others failed with 4MB).
+image::images/saxon-ee-streaming-many.png[]
 
-The downside of these options is, implementing the transformation itself requires quite a bit more skills.
-While it's fairly simple to implement the transformation logic when using the simple DOM Jackson version, I definitely benefited from my previous endeavors in the direction of building compilers with the others.
-It is definitely something that, especially people used to low-code solutions, won't feel comfortable implementing.
+== When to Use Which Approach
 
-The thing I like about the XSLT approach, is that it's super simple to define an XSLT (at least for me), and it's also easy to `hot-deploy` on a running gateway.
+DOM (Jackson):
+I would avoid this approach on small edge-devices.
+If CPU and Memory are plentiful, I still would probably only use it for small message sizes and low-volume scenarios.
+There are much better things we can put memory and CPU to use for.
+
+Streaming (Jackson/Pure SAX):
+Optimal for custom processing on constrained devices such as edge-gateways at scale and for processing large or continuous data-streams, but harder to maintain.
+
+XSLT (Saxon/Saxon Streaming):
+Best for declarative transformation needs on constrained devices such as edge-gateways.
+Here the Saxon Streaming approach is especially useful in streaming mode with large or continuous data streams, and I would probably choose the non-streaming Saxon option for high volume of smaller to mid-sized messages.
+
+== Conclusion
+
+I would generally avoid the `Jackson` approach with DOM processing.
+
+I am super impressed by the performance of Jackson Streaming.
+I guess I would probably choose this option if the people maintaining the system are skilled enough to maintain the transformation logic.
+When implementing the tests, I have to admit that I found this to be the most complex of all of my tested approaches.
+
+If the skill-set allows using XSLT, I really like this approach because of the expressiveness of XSD and XSLT.
+I like the availability of an affordable and great set of tools to maintain the schemas and transformations.
+Also do I find the XSL transformations a lot easier to read compared to the ones needed for Jackson Streaming and Pure SAX.
+Which version of Saxon to use depends on the use-case.
+If we need to convert many small to mid-sized messages, I would choose the non-streaming Saxon HE.
+If I need to convert really large documents or continuous streams of JSON data, the PR/EE option would be best, even if this produces minor costs for a commercial license.
+
+Personally, I prefer the idea of using XML Schema (XSD) for validating and XSLT for transforming, but I guess this is probably something people might consider `uncool`.
